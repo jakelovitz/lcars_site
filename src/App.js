@@ -16,7 +16,7 @@ function App() {
 	</div>
 	<div class="right-frame-top">
 		<div class="banner">
-			LCARS &#149; Online
+			Jake &#149; Lovitz
 		</div>
 			<div class="data-cascade-button-group">
 				<div class="cascade-wrapper">
@@ -25,12 +25,12 @@ function App() {
 					</div> 
 				</div> 
 				<div class="button-col">
-					<div class="button" id="top-left"><a href="">01</a></div>
-					<div class="button" id="bottom-left"><a href="">02</a></div>
+					<div class="button" id="top-left"><a href="">LinkedIn</a></div>
+					<div class="button" id="bottom-left"><a href="">Medium</a></div>
 				</div>
 				<div class="button-col">
-					<div class="button" id="top-right"><a href="">03</a></div>
-					<div class="button" id="bottom-right"><a href="">04</a></div>
+					<div class="button" id="top-right"><a href="">GitHub</a></div>
+					<div class="button" id="bottom-right"><a href="">Resume</a></div>
 				</div>
 			</div>
 			<div class="runner">
@@ -88,10 +88,9 @@ function App() {
 		<div class="content">
 
 			<h1>Hello</h1>
-			
-			<h2>Welcome to LCARS &#149; Lower Decks Theme</h2>
-
+			<h2>Welcome to Jake's Site &#149; Lower Decks Theme</h2>
 			<p>Live long and prosper.</p>
+      <p>I’m a QA Engineer with 4+ years of experience working with Electronic Health Records. I’ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
 			
 
 
@@ -106,7 +105,9 @@ function App() {
 					<span class="hop">22</span>47
 				</div>
 			</footer>
+
 		</div>
+
 	</div>
 </div>
 </>
