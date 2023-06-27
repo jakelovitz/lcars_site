@@ -90,7 +90,7 @@ function App() {
 			<h1>Hello</h1>
 			<h2>Welcome to Jake's Site &#149; Lower Decks Theme</h2>
 			<p>Live long and prosper.</p>
-      <p>I’m a QA Engineer with 4+ years of experience working with Electronic Health Records. I’ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
+      <p>I’m a QA Engineer with 4+ years of2 experience working with Electronic Health Records. I’ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
 			
 
 
