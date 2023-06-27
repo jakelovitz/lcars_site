@@ -11,8 +11,8 @@ function App() {
 		  <a id="scroll-top" href=""><span class="hop">screen</span>top</a>
 	  </div>
 	<div class="left-frame-top">
-		<div class="panel-1"><a href="">LCARS</a></div>
-		<div class="panel-2">02<span class="hop">-262000</span></div>
+		<div class="panel-1"><a href=""></a></div>
+		<div class="panel-2"><span class="hop"></span></div>
 	</div>
 	<div class="right-frame-top">
 		<div class="banner">
@@ -54,15 +54,15 @@ function App() {
 <div class="wrap" id="gap">
 	<div class="left-frame">
 		<div>
-			<div class="panel-3">03<span class="hop">-111968</span></div>
-			<div class="panel-4">04<span class="hop">-041969</span></div>
-			<div class="panel-5">05<span class="hop">-1701D</span></div>			
-			<div class="panel-6">06<span class="hop">-071984</span>
+			<div class="panel-3"><span class="hop"></span></div>
+			<div class="panel-4"><span class="hop"></span></div>
+			<div class="panel-5"><span class="hop"></span></div>			
+			<div class="panel-6"><span class="hop"></span>
 				
 			</div>
-			<div class="panel-7">07<span class="hop">-081940</span></div>
-			<div class="panel-8">08<span class="hop">-47148</span></div>
-			<div class="panel-9">09<span class="hop">-081966</span></div>
+			<div class="panel-7"><span class="hop"></span></div>
+			<div class="panel-8"><span class="hop"></span></div>
+			<div class="panel-9"><span class="hop"></span></div>
 		</div>
 		<div>
 			<div class="panel-10">10<span class="hop">-31</span></div>
@@ -97,7 +97,6 @@ function App() {
 			<footer>
 				<div class="footer-inside">
 					<div class="footer-text">
-						<p>Copyright &#169; 2022 Your Name or Website Name or URL</p>
 						<p>LCARS Inspired Website Template designed &amp; developed by Jim Robertus <a href="https://www.thelcars.com">www.TheLCARS.com</a>.</p>
 					</div>
 				</div>
