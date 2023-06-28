@@ -25,11 +25,11 @@ function App() {
 					</div> 
 				</div> 
 				<div class="button-col">
-					<div class="button" id="top-left"><a href="">LinkedIn</a></div>
-					<div class="button" id="bottom-left"><a href="">Medium</a></div>
+					<div class="button" id="top-left"><a href="https://linkedin.com/in/jakelovitz/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+					<div class="button" id="bottom-left"><a href="https://medium.com/@jakelovitz" target="_blank" rel="noopener noreferrer">Medium</a></div>
 				</div>
 				<div class="button-col">
-					<div class="button" id="top-right"><a href="">GitHub</a></div>
+					<div class="button" id="top-right"><a href="https://github.com/jakelovitz" target="_blank" rel="noopener noreferrer">GitHub</a></div>
 					<div class="button" id="bottom-right"><a href="">Resume</a></div>
 				</div>
 			</div>
@@ -91,11 +91,11 @@ function App() {
       
       <div class="flexbox">
         <div class="col">
-          <img style={{width: "100%", height: "100%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes.jpeg'} alt="your humble web developer" />
+          <img style={{width: "100%", height: "100%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes_alone.png'} alt="your humble web developer" />
         </div>
         <div class="col">
           <p>Your Humble Software Engineer in Test</p>
-          <p>Despite the site design, I'm also a big fan of Star Wars. In fact, I enjoy all flavors of speculative fiction. Just like how I dig all flavors of Rock 'n Roll - the alternative stuff of the 80s and 90s just happen to be my favorite.</p>
+          <p></p>
         </div>
       </div>
 
