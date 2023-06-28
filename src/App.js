@@ -16,7 +16,7 @@ function App() {
 	</div>
 	<div class="right-frame-top">
 		<div class="banner">
-			Jake &#149; Lovitz
+			Jake Lovitz
 		</div>
 			<div class="data-cascade-button-group">
 				<div class="cascade-wrapper">
@@ -58,15 +58,14 @@ function App() {
 			<div class="panel-4"><span class="hop"></span></div>
 			<div class="panel-5"><span class="hop"></span></div>			
 			<div class="panel-6"><span class="hop"></span>
-				
-			</div>
+		</div>
 			<div class="panel-7"><span class="hop"></span></div>
 			<div class="panel-8"><span class="hop"></span></div>
 			<div class="panel-9"><span class="hop"></span></div>
 		</div>
-		<div>
+		{/* <div>
 			<div class="panel-10">10<span class="hop">-31</span></div>
-		</div>
+		</div> */}
 	</div>
 	<div class="right-frame">
 		<div class="bar-panel">
@@ -87,10 +86,23 @@ function App() {
 		</div>
 		<div class="content">
 
-			<h1>Hello</h1>
-			<h2>Welcome to Jake's Site &#149; Lower Decks Theme</h2>
-			<p>Live long and prosper.</p>
-      <p>I’m a QA Engineer with 4+ years of2 experience working with Electronic Health Records. I’ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
+			{/* <h1>Hello!</h1> */}
+			{/* <h2>Thanks for coming</h2> */}
+      
+      <div class="flexbox">
+        <div class="col">
+          <img style={{width: "100%", height: "100%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes.jpeg'} alt="your humble web developer" />
+        </div>
+        <div class="col">
+          <p>Your Humble Software Engineer in Test</p>
+          <p>Despite the site design, I'm also a big fan of Star Wars. In fact, I enjoy all flavors of speculative fiction. Just like how I dig all flavors of Rock 'n Roll - the alternative stuff of the 80s and 90s just happen to be my favorite.</p>
+        </div>
+      </div>
+
+      <p>I`m a QA Engineer with 4+ years of experience working with Electronic Health Records. I`ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
+      <h3>Be a subject matter expert</h3>
+      <p>Comprehensive knowledge is the bedrock of comprehensive testing, especially for an EHR. The EQAE has a thorough understanding of their product as a whole, a mastery of their functional areas in particular, and a deep appreciation for all the interactions and interplay in between the two.</p>
+      <h3></h3>
 			
 
 
