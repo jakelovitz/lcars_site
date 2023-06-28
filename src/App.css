@@ -31,6 +31,14 @@ html  {
   *  {
   scrollbar-color:  #2d2d2d #121212;
 }
+/* img {
+  display: block;
+  width: 500px;
+  height: 600px;
+  margin-bottom: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  } */
 }
 body  {
   margin:  0;
@@ -38,11 +46,11 @@ body  {
   background-color:  #000;
   font-family: 'Antonio',  'Arial Narrow',  'Avenir Next Condensed',  sans-serif;
   line-height:  1.5;
-  color:  #f40;
+  color:  #ddbbff;
 }
 a  {
   text-decoration:  underline;
-  color:  #fc9;
+  color:  #f5f6fa;
 }
 @keyframes blink  {
   0%  {
@@ -56,16 +64,16 @@ a  {
 }
 }@keyframes colorchange  {
   0%  {
-  color:  #f40;
+  color:  #ddbbff;
 }
 25%  {
-  color:  #f40;
+  color:  #ddbbff;
 }
 50%  {
-  color:  #f40;
+  color:  #ddbbff;
 }
 75%  {
-  color:  #f40;
+  color:  #ddbbff;
 }
 80%  {
   color:  #000;
@@ -101,7 +109,7 @@ a  {
   border-top:  8px solid #000;
   border-bottom:  8px solid #000;
   padding:  20px 10px 20px 2px;
-  background-color:  #f70;
+  background-color:  #9944ff;
   font-size:  .96rem;
   font-weight:  bold;
   color:  #000;
@@ -115,7 +123,7 @@ a  {
   color:  #000;
 }
 .left-frame-top  {
-  background-color:  #f40;
+  background-color:  #ddbbff;
   border-radius:  0 0 0 60px;
 }
 .left-frame-top a,  .left-frame a  {
@@ -127,12 +135,12 @@ a  {
   flex-direction:  column;
   justify-content:  space-between;
   padding-top:  160px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
   border-radius:  60px 0 0 0;
 }
 .panel-1 a  {
   display:  block;
-  background-color:  #f70;
+  background-color:  #9944ff;
   padding:  82px 10px 15px 0;
   text-decoration:  none;
   color:  #000;
@@ -160,10 +168,10 @@ a  {
   text-transform:  uppercase;
   line-height:  1.2;
   font-size:  clamp(1.2rem,  1.3rem + 2.6vw,  3.1rem);
-  color:  #fc9;
+  color:  #f5f6fa;
 }
 .banner a  {
-  color:  #fc9;
+  color:  #f5f6fa;
   text-decoration:  none;
 }
 @media only screen and (max-width: 500px)  {
@@ -282,19 +290,19 @@ a  {
 }
 .data-cascade#frozen .row-1  {
   animation:  none;
-  color:  #f40;
+  color:  #ddbbff;
 }
 .data-cascade#frozen .row-2  {
   animation:  none;
-  color:  #f40;
+  color:  #ddbbff;
 }
 .data-cascade#frozen .row-3  {
   animation:  none;
-  color:  #f40;
+  color:  #ddbbff;
 }
 .data-cascade#frozen .row-4  {
   animation:  none;
-  color:  #f70;
+  color:  #9944ff;
 }
 .data-cascade#frozen .row-5  {
   animation:  none;
@@ -302,7 +310,7 @@ a  {
 }
 .data-cascade#frozen .row-6  {
   animation:  none;
-  color:  #f40;
+  color:  #ddbbff;
 }
 .dc1,  .dc2,  .dc3,  .dc4,  .dc5,  .dc6,  .dc7,  .dc8,  .dc9,  .dc10,  .dc11,  .dc12,  .dc13,  .dc14,  .grid,  .grid-2,  .grid-1,  .grid-3,  .grid-4  {
   flex:  1;
@@ -328,7 +336,7 @@ a  {
   height:  58px;
   margin-bottom:  15px;
   padding:  20px 25px 0 0;
-  background-color:  #fa4;
+  background-color:  #552255;
   border-radius:  26px;
   text-align:  right;
   line-height:  normal;
@@ -342,16 +350,16 @@ a  {
   user-select:  none;
 }
 .button#top-left a  {
-  background-color: #fc9;
+  background-color: #f5f6fa;
 }
 .button#bottom-left a  {
-  background-color:  #f70;
+  background-color:  #9944ff;
 }
 .button#top-right a  {
-  background-color: #fa4;
+  background-color: #552255;
 }
 .button#bottom-right a  {
-  background-color: #f40;
+  background-color: #ddbbff;
 }
 .button a:active,  .button a:focus  {
   filter:  brightness(70%);
@@ -381,7 +389,7 @@ a  {
 .top-corner-bg  {
   width:  160px;
   height:  50px;
-  background:  linear-gradient(to top right,  #f40 50%,  #000 50%);
+  background:  linear-gradient(to top right,  #ddbbff 50%,  #000 50%);
 }
 .top-corner  {
   width:  160px;
@@ -406,7 +414,7 @@ a  {
 .block-4-floatbar  {
   width:  260px;
   height:  8px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .bar-panel  {
   display:  flex;
@@ -423,19 +431,19 @@ a  {
 }
 .bar-1,  .bar-6  {
   width:  160px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .bar-2,  .bar-7  {
   width:  140px;
-  background-color:  #f70;
+  background-color:  #9944ff;
 }
 .bar-3,  .bar-8  {
   width:  140px;
-  background-color:  #fc9;
+  background-color:  #f5f6fa;
 }
 .bar-4  {
   flex:  1;
-  background-color:  #fa4;
+  background-color:  #552255;
   padding-top:  10px;
 }
 .bar-4-inside  {
@@ -446,7 +454,7 @@ a  {
 }
 .bar-9  {
   flex:  1;
-  background-color:  #fa4;
+  background-color:  #552255;
 }
 .bar-9-inside  {
   width:  200px;
@@ -466,37 +474,37 @@ a  {
 .panel-4  {
   height:  120px;
   padding:  15px 10px 0 0;
-  background-color:  #f70;
+  background-color:  #9944ff;
   justify-content:  space-around;
 }
 .panel-5  {
   height:  350px;
   padding:  15px 10px 0 0;
-  background-color:  #fa4;
+  background-color:  #552255;
 }
 .panel-6  {
   height:  250px;
   padding:  15px 10px 0 0;
-  background-color:  #fc9;
+  background-color:  #f5f6fa;
 }
 .panel-7  {
   height:  380px;
   padding:  20px 10px 0 0;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .panel-8  {
   padding:  50px 10px 50px 0;
-  background-color:  #fc9;
+  background-color:  #f5f6fa;
 }
 .panel-9  {
   height:  190px;
   padding:  15px 10px 0 0;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .panel-10  {
   height:  350px;
   border-top:  8px solid #000;
-  background-color:  #fa4;
+  background-color:  #552255;
   padding:  15px 10px 0 0;
 }
 .right-frame  {
@@ -506,7 +514,7 @@ a  {
 .corner-bg  {
   width:  160px;
   height:  50px;
-  background:  linear-gradient(to bottom right,  #f40 50%,  #000 50%);
+  background:  linear-gradient(to bottom right,  #ddbbff 50%,  #000 50%);
 }
 .corner  {
   width:  160px;
@@ -538,7 +546,7 @@ h1,  h2,  h3  {
   font-weight:  normal;
   text-transform:  uppercase;
   line-height:  1.2;
-  color:  #fc9;
+  color:  #f5f6fa;
 }
 h1  {
   font-size:  clamp(1.6rem,  1.6rem + 2.7vw,  3.34rem);
@@ -569,13 +577,13 @@ p.postmeta  {
 }
 code  {
   font-size:  .8rem;
-  color:  #fa4;
+  color:  #552255;
 }
 hr  {
   margin:  30px 0;
   height:  6px;
   border:  none;
-  background-color:  #f40;
+  background-color:  #ddbbff;
   border-radius:  3px;
 }
 .disc  {
@@ -586,7 +594,7 @@ hr  {
 }
 blockquote  {
   margin:  30px 40px;
-  border-left:  4px solid #f40;
+  border-left:  4px solid #ddbbff;
   padding-left:  20px;
 }
 .nomar  {
@@ -645,7 +653,7 @@ a:hover  {
 }
 .border  {
   padding:  10px;
-  border:  2px solid #f40;
+  border:  2px solid #ddbbff;
 }
 .lcars-list  {
   list-style:  none;
@@ -661,7 +669,7 @@ a:hover  {
   width:  30px;
   height:  20px;
   border-radius:  50%;
-  background-color:  #f40;
+  background-color:  #ddbbff;
   position:  absolute;
   top:  13px;
   left:  0;
@@ -701,7 +709,7 @@ a:hover  {
   width:  200px;
   height:  60px;
   padding:  20px 25px 0 0;
-  background-color:  #fa4;
+  background-color:  #552255;
   border-radius:  26px;
   text-align:  right;
   font-size:  22px;
@@ -733,7 +741,7 @@ a:hover  {
   text-align:  right;
   border-bottom:  8px solid #000;
   padding:  20px 10px 20px 2px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
   text-transform:  uppercase;
   color:  #000;
 }
@@ -752,20 +760,20 @@ a:hover  {
   margin:  40px auto;
   height:  20px;
   background-color:  #000;
-  border-right:  18px solid #fa4;
-  border-left:  18px solid #fa4;
+  border-right:  18px solid #552255;
+  border-left:  18px solid #552255;
   border-radius:  9px;
   padding:  0 5px;
 }
 .lcars-bar-inner  {
   height:  20px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .lcars-bar-slice-top  {
   margin:  40px auto -30px auto;
   width:  180px;
   height:  8px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .lcars-bar-cutout  {
   margin:  0 auto;
@@ -777,7 +785,7 @@ a:hover  {
   margin:  -30px auto 0 auto;
   width:  180px;
   height:  5px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .lcars-text-bar  {
   display:  flex;
@@ -786,9 +794,9 @@ a:hover  {
   overflow:  visible;
   border-radius:  14px;
   height:  32px;
-  background-color:  #f40;
-  border-right:  28px solid #fa4;
-  border-left:  28px solid #fa4;
+  background-color:  #ddbbff;
+  border-right:  28px solid #552255;
+  border-left:  28px solid #552255;
 }
 .the-end  {
   justify-content:  flex-end;
@@ -803,7 +811,7 @@ a:hover  {
   font-size:  1.64rem;
   line-height:  34px;
   text-transform:  uppercase;
-  color:  #fc9 }
+  color:  #f5f6fa }
 .lcars-text-bar::before  {
   content:  '';
   background-color:  #000;
@@ -851,7 +859,7 @@ footer  {
   bottom:  0;
   margin:  50px auto 0 auto;
   padding:  12px 0;
-  background:  linear-gradient(#fa4 50%,  #f40 50%);
+  background:  linear-gradient(#552255 50%,  #ddbbff 50%);
   border-radius:  0 20px 20px 0;
   overflow:  hidden;
   position:  relative;
@@ -885,7 +893,7 @@ footer::after  {
   height:  100px;
   margin:  auto;
   padding:  10px 0 0 1%;
-  background-color:  #fc9;
+  background-color:  #f5f6fa;
   border-top:  5px solid #000;
   border-bottom:  5px solid #000;
   font-size:  .85rem;
@@ -902,7 +910,7 @@ footer::after  {
 }
 .footer-inside::before  {
   content:  '';
-  background-color:  #fa4;
+  background-color:  #552255;
   display:  block;
   width:  15%;
   min-width:  60px;
@@ -914,7 +922,7 @@ footer::after  {
 }
 .footer-inside::after  {
   content:  '';
-  background-color:  #f40;
+  background-color:  #ddbbff;
   display:  block;
   width:  15%;
   min-width:  60px;
@@ -997,10 +1005,10 @@ footer::after  {
   color:  #94f !important;
 }
 .orange,  .oc-orange::before  {
-  background-color:  #f70 !important;
+  background-color:  #9944ff !important;
 }
 .go-orange  {
-  color:  #f70 !important;
+  color:  #9944ff !important;
 }
 .african-violet,  .oc-african-violet::before  {
   background-color:  #c8f !important;
@@ -1117,10 +1125,10 @@ footer::after  {
   color:  #c66 !important;
 }
 .honey,  .oc-honey::before  {
-  background-color:  #fc9 !important;
+  background-color:  #f5f6fa !important;
 }
 .go-honey  {
-  color:  #fc9 !important;
+  color:  #f5f6fa !important;
 }
 .cardinal,  .oc-cardinal::before  {
   background-color:  #c23 !important;
@@ -1171,16 +1179,16 @@ footer::after  {
   color:  #def !important;
 }
 .october-sunset,  .oc-october-sunset::before  {
-  background-color:  #f40 !important;
+  background-color:  #ddbbff !important;
 }
 .go-october-sunset  {
-  color:  #f40 !important;
+  color:  #ddbbff !important;
 }
 .harvestgold,  .oc-harvestgold::before  {
-  background-color:  #fa4 !important;
+  background-color:  #552255 !important;
 }
 .go-harvestgold  {
-  color:  #fa4 !important;
+  color:  #552255 !important;
 }
 .butter,  .oc-butter::before  {
   background-color:  #fec !important;
@@ -1560,7 +1568,7 @@ blockquote  {
 .panel-2  {
   padding-bottom:  15px;
   border-bottom:  5px solid #000;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 .hop  {
   display:  none;
@@ -1630,7 +1638,7 @@ blockquote  {
 .block-4-floatbar  {
   width:  60px;
   height:  4px;
-  background-color:  #f40;
+  background-color:  #ddbbff;
 }
 #gap  {
   margin-top:  5px;
