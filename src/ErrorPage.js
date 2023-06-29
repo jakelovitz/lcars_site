@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
-import './homepage.css';
+import './styling.css';
 import {
   createBrowserRouter,
   RouterProvider,

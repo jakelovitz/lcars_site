@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './App.css';
 import HomePage from './homepage.js';
+import Header from "./Header";
 import ErrorPage from './ErrorPage.js';
 import {
   createBrowserRouter,
@@ -37,6 +38,7 @@ import {
 function App() {
   return (
     <div>
+      <Header />
       <HomePage />
     </div>
   
