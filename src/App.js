@@ -1,48 +1,18 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { Route, Routes } from "react-router-dom"
 import logo from './logo.svg';
-import './App.css';
-import HomePage from './homepage.js';
-import Header from "./Header";
-import ErrorPage from './ErrorPage.js';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
-// import Pdf from '../Lovitz-Resume.pdf';
+import './styling.css';
+import { default as HomePage } from './homepage.js';
+import { default as Header } from "./Header.js";
+import { default as TestingPage } from './TestingPage.js';
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <HomePage />,
-//     // loader: rootLoader,
-//     children: [
-//       {
-        
-//       },
-//     ],
-//   },
-//   {
-//     path: "/error",
-//     element: <ErrorPage />,
-//   },
-// ]);
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <RouterProvider router={router} />
-// );
-
-function App() {
+export function App() {
   return (
-    <div>
-      <Header />
-      <HomePage />
-    </div>
-  
-  
+    <Routes>
+      <Route path="/" element={ <HomePage />} />
+      <Route path="/testingpage" element={<TestingPage />} />
+    </Routes>
   );
 }
 

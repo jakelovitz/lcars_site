@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
-import {
-    BrowserRouter,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pdf from '../src/Lovitz-Resume.pdf';
 
-class Header extends Component {
-    render() {
+function Header() {
         return (
-            <BrowserRouter>
+           
                 <header>
                 <div class="wrap">
                     <div class="scroll-top">
@@ -61,11 +55,11 @@ class Header extends Component {
                         </div>
                     </div>
                 </header>
-            </BrowserRouter>
+           
               
               
               );
     }
-}
+
 
 export default Header;
