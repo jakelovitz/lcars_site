@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+import { default as HomePage } from './homepage.js';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
 import { Link } from "react-router-dom";
-import Pdf from '../src/Lovitz-Resume.pdf';
-import { default as TestingPage } from './TestingPage.js';
-
 import { default as Header } from "./Header.js";
 
-function HomePage() {
+function TestingPage() {
     return (
         <div>
             <Header />
@@ -16,8 +14,8 @@ function HomePage() {
                 <div class="left-frame">
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
-                        <div class="panel-4"><Link to="testingpage">Testing<span class="hop"></span> Infrastructure</Link></div>
-                        <div class="panel-5"><Link to="AboutPipes">About<span class="hop"></span> Pipes</Link></div>		
+                        <div class="panel-4"><Link to="/">Home<span class="hop"></span> Page</Link></div>
+                        <div class="panel-5"><span class="hop"></span></div>			
                         <div class="panel-6"><span class="hop"></span></div>
                         <div class="panel-7"><span class="hop"></span></div>
                         <div class="panel-8"><span class="hop"></span></div>
@@ -55,8 +53,8 @@ function HomePage() {
                         </div>
                         <div class="col">
                             <p>Your Humble Software Engineer in Test</p>
-                            <p>Communication is not possible. The shuttle has no power. Using the gravitational pull of a star to slingshot back in time? We are going to Starbase Montgomery for Engineering consultations prompted by minor read-out anomalies. Probes have recorded unusual levels of geological activity in all five planetary systems. Assemble a team. Look at records of the Drema quadrant. Would these scans detect artificial transmissions as well as natural signals?</p>
-                            <p>Unidentified vessel travelling at sub warp speed, bearing 235.7. Fluctuations in energy readings from it, Captain. All transporters off. A strange set-up, but I'd say the graviton generator is depolarized. The dark colourings of the scrapes are the leavings of natural rubber, a type of non-conductive sole used by researchers experimenting with electricity. The molecules must have been partly de-phased by the anyon beam.</p>
+                            <p>This is a page all about ME. I love ME</p>
+                            <p>I like Star Wars and Star Trek. LIke Star Wars first but now I'm a big fan of Trek as well. Both good, both good. You like what you like</p>
                         </div>
                     </div>
     
@@ -82,9 +80,7 @@ function HomePage() {
                 </div>
             </div>        
         </div>
-            
-            
-    );
+    )
 }
 
-export default HomePage;
+export default TestingPage;
