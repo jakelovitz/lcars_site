@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { default as HomePage } from './homepage.js';
+// import { default as HomePage } from './homepage.js';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
