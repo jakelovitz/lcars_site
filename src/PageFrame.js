@@ -8,7 +8,6 @@ import { default as TestingPage } from './TestingPage.js';
 
 import { default as Header } from "./Header.js";
 import { default as Footer } from "./Footer.js";
-// import { default as LeftHandNav } from "./LeftHandNav.js";
 import { default as Content } from "./Content.js";
 
 let handleClick = () => {
@@ -31,7 +30,7 @@ class PageFrame extends React.Component {
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
                         <div class="sidebar-buttons">
-                            <a onClick={() => { handleClick()}}>Home</a>
+                            <a onClick={ () => { handleClick() } }>Home</a>
                             <a>Testing</a>
                             <a>Me</a>
                         </div>
