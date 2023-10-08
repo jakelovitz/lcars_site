@@ -5,20 +5,25 @@ import './styling.css';
 import { Link } from "react-router-dom";
 
 function Footer() {
-    return (   
-        <footer>
-            <div class="footer-inside">
-                <div class="footer-text">
-                    <p>LCARS Inspired Website Template designed &amp; developed by Jim Robertus <a href="https://www.thelcars.com">www.TheLCARS.com</a>.</p>
+    
+    return (  
+
+        <div class="footer" >
+
+            <footer>
+                <div class="footer-inside">
+                    <div class="footer-text">
+                        <p>LCARS Inspired Website Template designed &amp; developed by Jim Robertus <a href="https://www.thelcars.com">www.TheLCARS.com</a>.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-panel">
-                <span class="hop">22</span>47
-            </div>
-        </footer>
+                <div class="footer-panel">
+                    <span class="hop">22</span>47
+                </div>
+            </footer>
+        </div>
+
     );
+
 }
-
-
 
 export default Footer;
