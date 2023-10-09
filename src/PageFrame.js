@@ -10,18 +10,23 @@ import { default as Header } from "./Header.js";
 import { default as Footer } from "./Footer.js";
 import { default as AboutMe } from "./AboutMe.js";
 
-let handleClick = () => {
-    // this.setState({ contentComponentComponent: e.target.name });
-    console.log("ello");
-}
+class PageFrame extends Component {
 
-// let selectedContent = () => {
-//     const 
-// }
+    state = {
+        selectedComponent: <AboutMe />
+    }
+    
+    handleClick = (event) => {
+        this.setState({ selectedComponent: < event.target.name /> })
+        console.log(event.target.name);
+        console.log(this.state.selectedComponent);
+    }
 
-class PageFrame extends React.Component {
-
-
+    // generateContent = (state) => {
+    //     return {
+    //         < state.selectedComponent />
+    //     }
+    // }
 
     render() {
 
@@ -34,9 +39,9 @@ class PageFrame extends React.Component {
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
                         <div class="sidebar-buttons">
-                            <a onClick={ () => { handleClick() } }>About Me</a>
-                            <a>Testing</a>
-                            <a>Library</a>
+                            <a onClick={this.handleClick} name="AboutMe">About Me</a>
+                            <a onClick={this.handleClick} name="TestingPage">Testing</a>
+                            <a onClick={this.handleClick} name="library">Library</a>
                         </div>
                         <div class="panel-4"><span class="hop"></span></div>
                             {/* <div class="panel-5"><span class="hop"></span></div> */}
@@ -66,9 +71,10 @@ class PageFrame extends React.Component {
                         <div class="block-4-floatbar"></div>
                         </div>
                     </div>
-
-                    <AboutMe />
-                        
+                    
+                    {/* <AboutMe /> */}
+                    {this.state.selectedComponent}
+                    
                     <Footer />
                 
                 </div>
