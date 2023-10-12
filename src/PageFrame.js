@@ -12,14 +12,19 @@ import { default as AboutMe } from "./AboutMe.js";
 
 class PageFrame extends Component {
 
+    pageComponents = {componentOne: <AboutMe />, componentTwo: < TestingPage/> };
+
     state = {
-        selectedComponent: <AboutMe />
+        selectedComponent: this.pageComponents.componentOne
     }
+
     
     handleClick = (event) => {
-        this.setState({ selectedComponent: < event.target.name /> })
+        let eventA = event.target.name;
+        this.setState({ selectedComponent: this.pageComponents.eventA });
         console.log(event.target.name);
         console.log(this.state.selectedComponent);
+        console.log(eventA)
     }
 
     // generateContent = (state) => {
@@ -39,8 +44,8 @@ class PageFrame extends Component {
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
                         <div class="sidebar-buttons">
-                            <a onClick={this.handleClick} name="AboutMe">About Me</a>
-                            <a onClick={this.handleClick} name="TestingPage">Testing</a>
+                            <a onClick={this.handleClick} name={this.pageComponents.componentOne }>About Me</a>
+                            <a onClick={this.handleClick} name={this.pageComponents.componentTwo }>Testing</a>
                             <a onClick={this.handleClick} name="library">Library</a>
                         </div>
                         <div class="panel-4"><span class="hop"></span></div>
@@ -72,7 +77,7 @@ class PageFrame extends Component {
                         </div>
                     </div>
                     
-                    {/* <AboutMe /> */}
+                    {/* <TestingPage /> */}
                     {this.state.selectedComponent}
                     
                     <Footer />
