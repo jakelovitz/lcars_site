@@ -12,26 +12,25 @@ import { default as AboutMe } from "./AboutMe.js";
 
 class PageFrame extends Component {
 
-    pageComponents = {componentOne: <AboutMe />, componentTwo: < TestingPage/> };
-
-    state = {
-        selectedComponent: this.pageComponents.componentOne
+    constructor() {
+        super();
+        this.pageComponents = [ <AboutMe />, < TestingPage/>];
+        this.state = {
+            selectedComponent: this.pageComponents[0],
+        };
     }
+
+    updateSelectedComponent = (eventID) => {
+        this.setState({ selectedComponent: this.pageComponents[eventID] });
+    };
 
     
     handleClick = (event) => {
-        let eventA = event.target.name;
-        this.setState({ selectedComponent: this.pageComponents.eventA });
-        console.log(event.target.name);
-        console.log(this.state.selectedComponent);
-        console.log(eventA)
+        let eventID = event.target.id
+        console.log(eventID)
+        this.updateSelectedComponent(eventID)
+        console.log(this.state.selectedComponent)
     }
-
-    // generateContent = (state) => {
-    //     return {
-    //         < state.selectedComponent />
-    //     }
-    // }
 
     render() {
 
@@ -44,9 +43,9 @@ class PageFrame extends Component {
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
                         <div class="sidebar-buttons">
-                            <a onClick={this.handleClick} name={this.pageComponents.componentOne }>About Me</a>
-                            <a onClick={this.handleClick} name={this.pageComponents.componentTwo }>Testing</a>
-                            <a onClick={this.handleClick} name="library">Library</a>
+                            <a onClick={this.handleClick} id="0">About Me</a>
+                            <a onClick={this.handleClick} id="1">Testing</a>
+                            <a onClick={this.handleClick} id="1">Library</a>
                         </div>
                         <div class="panel-4"><span class="hop"></span></div>
                             {/* <div class="panel-5"><span class="hop"></span></div> */}
