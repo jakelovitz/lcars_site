@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './styling.css';
 import { Link } from "react-router-dom";
 
-function Content() {
+function AboutMe() {
     return (   
         <div class="content">
             <div class="flexbox">
@@ -26,4 +26,4 @@ function Content() {
         </div>
     );
 } 
-export default Content;
+export default AboutMe;

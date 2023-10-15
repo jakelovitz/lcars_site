@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
@@ -8,17 +8,29 @@ import { default as TestingPage } from './TestingPage.js';
 
 import { default as Header } from "./Header.js";
 import { default as Footer } from "./Footer.js";
-// import { default as LeftHandNav } from "./LeftHandNav.js";
-import { default as Content } from "./Content.js";
+import { default as AboutMe } from "./AboutMe.js";
 
-let handleClick = () => {
-    // this.setState({ contentComponentComponent: e.target.name });
-    alert("ello");
-}
+class PageFrame extends Component {
 
-class PageFrame extends React.Component {
+    constructor() {
+        super();
+        this.pageComponents = [ <AboutMe />, < TestingPage/>];
+        this.state = {
+            selectedComponent: this.pageComponents[0],
+        };
+    }
 
+    updateSelectedComponent = (eventID) => {
+        this.setState({ selectedComponent: this.pageComponents[eventID] });
+    };
 
+    
+    handleClick = (event) => {
+        let eventID = event.target.id
+        console.log(eventID)
+        this.updateSelectedComponent(eventID)
+        console.log(this.state.selectedComponent)
+    }
 
     render() {
 
@@ -31,9 +43,9 @@ class PageFrame extends React.Component {
                     <div>
                         <div class="panel-3"><span class="hop"></span></div>
                         <div class="sidebar-buttons">
-                            <a onClick={() => { handleClick()}}>Home</a>
-                            <a>Testing</a>
-                            <a>Me</a>
+                            <a onClick={this.handleClick} id="0">About Me</a>
+                            <a onClick={this.handleClick} id="1">Testing</a>
+                            <a onClick={this.handleClick} id="1">Library</a>
                         </div>
                         <div class="panel-4"><span class="hop"></span></div>
                             {/* <div class="panel-5"><span class="hop"></span></div> */}
@@ -63,9 +75,10 @@ class PageFrame extends React.Component {
                         <div class="block-4-floatbar"></div>
                         </div>
                     </div>
-
-                    <Content />
-                        
+                    
+                    {/* <TestingPage /> */}
+                    {this.state.selectedComponent}
+                    
                     <Footer />
                 
                 </div>
