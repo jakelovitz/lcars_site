@@ -960,9 +960,9 @@
     justify-content:  center;
   }
   @media only screen and (max-width: 600px)  {
-    footer: :before  {
-    left:  40%;
-  }
+    footer :before  {
+      left:  40%;
+    }
   }
   /* .footer  {
     margin:  0 auto;
