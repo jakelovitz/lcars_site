@@ -13,7 +13,7 @@ function Footer() {
             <footer>
                 <div class="footer-inside">
                     <div class="footer-text">
-                        <p>LCARS Inspired Website Template designed &amp; developed by Jim Robertus <a href="https://www.thelcars.com">www.TheLCARS.com </a></p>
+                        <p>LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com </a></p>
                         <p>Translated into JSX and modified for this site by Jake Lovitz</p>
                     </div>
                 </div>

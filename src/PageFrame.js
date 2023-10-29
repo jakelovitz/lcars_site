@@ -76,7 +76,6 @@ class PageFrame extends Component {
                         </div>
                     </div>
                     
-                    {/* <TestingPage /> */}
                     {this.state.selectedComponent}
                     
                     <Footer />
