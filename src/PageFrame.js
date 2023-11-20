@@ -10,6 +10,7 @@ import { default as Header } from "./Header.js";
 import { default as Footer } from "./Footer.js";
 import { default as AboutMe } from "./AboutMe.js";
 import { default as Blog } from "./blog.js";
+import { default as BlogPost } from "./BlogPost.js";
 
 import axios from 'axios';
 
@@ -17,7 +18,7 @@ class PageFrame extends Component {
 
     constructor() {
         super();
-        this.pageComponents = [ < AboutMe />, < TestingPage/>, <Blog />];
+        this.pageComponents = [ < AboutMe />, < BlogPost/>, <Blog />];
         this.state = {
             selectedComponent: this.pageComponents[0],
         };

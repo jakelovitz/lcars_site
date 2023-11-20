@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { default as HomePage } from './homepage.js';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
@@ -10,10 +9,6 @@ function Content() {
     return (   
         <div class="content">
             <div class="flexbox">
-
-                {/* <div class="col">
-                    <img style={{width: "100%", height: "100%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes_alone.png'} alt="your humble web developer" />
-                </div> */}
 
                 <div class="col">
                     <p>Your Humble Software Engineer in Test</p>

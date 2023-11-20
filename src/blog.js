@@ -2,7 +2,6 @@ import React, { Component, useState, useEffect } from 'react';
 import * as ReactDOM from "react-dom/client";
 import logo from './logo.svg';
 import './styling.css';
-import { Link } from "react-router-dom";
 import { default as Header } from "./Header.js";
 import axios from 'axios';
 
@@ -10,17 +9,19 @@ const BlogPosts = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
+
         const fetchPosts = async () => {
             try {
                 const response = await axios.get('http://jakes-blog.local/wp-json/wp/v2/pages');
                 setPosts(response.data);
-                console.log(response.data);
+                // console.log(response.data);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
         };
 
         fetchPosts();
+
     }, []);
 
     return (
