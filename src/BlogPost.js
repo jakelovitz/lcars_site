@@ -7,15 +7,15 @@ import { default as Header } from "./Header.js";
 import axios from 'axios';
 
 const BlogContent = () => {
-    const [page, setState] = useState([]);
+    const [page, setPage] = useState([]);
 
     useEffect(() => {
 
         const fetchBlogContent = async () => {
             try {
-                const response = await axios.get('http://jakes-blog.local/wp-json/wp/v2/pages/7');
-                setState(response.data);
-                console.log(response.data.keys());
+                const response = await axios.get('http://jakes-blog.local/wp-json/wp/v2/pages');
+                setPage(response.data);
+                console.log(response.data);
             } catch (error) {
                 console.error('Error fetching page:', error);
             }
@@ -28,12 +28,12 @@ const BlogContent = () => {
     return (
         <div class="col">
             <p>This is a page to try displaying things from WP!!</p>
-            {/* <p>{page.title}</p> */}
-            <ul>
-                {/* {page.map(post => (
-                    <li key={post.id}>{post.title.rendered}</li>
-                ))} */}
-            </ul>
+            {page.map((post) => (
+            <div>
+                <li key={post.id}>{post.title.rendered}</li>
+                <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+            </div>
+            ))}
         </div>
     );
 };
