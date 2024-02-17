@@ -1,8 +1,5 @@
 import React from 'react';
-import * as ReactDOM from "react-dom/client";
-import logo from './logo.svg';
 import './styling.css';
-import { Link } from "react-router-dom";
 import Pdf from '../src/Lovitz-Resume.pdf';
 
 function Header() {

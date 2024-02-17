@@ -1,12 +1,6 @@
-import React, { Component, useState } from 'react';
-import * as ReactDOM from "react-dom/client";
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './styling.css';
-import { Link } from "react-router-dom";
-import Pdf from '../src/Lovitz-Resume.pdf';
 import { default as TestingPage } from './TestingPage.js';
-
-import { default as Header } from "./Header.js";
 import { default as Footer } from "./Footer.js";
 import { default as AboutMe } from "./AboutMe.js";
 
