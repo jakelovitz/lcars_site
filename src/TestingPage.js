@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-// import { default as HomePage } from './homepage.js';
-import * as ReactDOM from "react-dom/client";
-import logo from './logo.svg';
+import React from 'react';
 import './styling.css';
-import { Link } from "react-router-dom";
-import { default as Header } from "./Header.js";
 
 function Content() {
     return (   
