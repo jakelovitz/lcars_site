@@ -3,12 +3,13 @@ import './styling.css';
 import { default as TestingPage } from './TestingPage.js';
 import { default as Footer } from "./Footer.js";
 import { default as AboutMe } from "./AboutMe.js";
+import { default as LibraryPage } from "./LibraryPage.js"
 
 class PageFrame extends Component {
 
     constructor() {
         super();
-        this.pageComponents = [ <AboutMe />, < TestingPage/>];
+        this.pageComponents = [ <AboutMe />, < TestingPage/>, < LibraryPage/>];
         this.state = {
             selectedComponent: this.pageComponents[0],
         };
@@ -39,7 +40,7 @@ class PageFrame extends Component {
                         <div class="sidebar-buttons">
                             <a onClick={this.handleClick} id="0">About Me</a>
                             <a onClick={this.handleClick} id="1">Testing</a>
-                            <a onClick={this.handleClick} id="1">Library</a>
+                            <a onClick={this.handleClick} id="2">Library</a>
                         </div>
                         <div class="panel-4"><span class="hop"></span></div>
                             {/* <div class="panel-5"><span class="hop"></span></div> */}
