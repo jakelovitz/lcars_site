@@ -1,24 +1,14 @@
 import * as React from "react";
-import './styling.css';
-import { default as Header } from "./Header.js";
-import { default as PageFrame } from './PageFrame.js';
+import './assets/styling.css';
 
-class App extends React.Component {
-
-  render() {
-    
-    return (
-      
-      <div>
-
-        <Header />
-
-        <PageFrame />
-
-      </div>  
-    );
-  }
-
+function App({ header, footer, currentPage: CurrentPage, navigateToPage }) {
+  return (
+    <div>
+      {header}
+      {/* Pass the footer as a prop to the CurrentPage */}
+      <CurrentPage onNavigate={navigateToPage} footer={footer} />
+    </div>
+  );
 }
 
 export default App;

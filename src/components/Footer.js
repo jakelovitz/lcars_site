@@ -1,5 +1,5 @@
 import React from 'react';
-import './styling.css';
+import './../assets/styling.css';
 
 function Footer() {
     
