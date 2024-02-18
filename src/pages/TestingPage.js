@@ -13,7 +13,7 @@ function TestingPage({ onNavigate, footer }) {
                     <div class="sidebar-buttons">
                         <a onClick={() => onNavigate(0)} id="0">About Me</a>
                         <a onClick={() => onNavigate(1)} id="1">Testing</a>
-                        <a id="2">Library</a>
+                        <a onClick={() => onNavigate(2)} id="2">Library</a>
                     </div>
                     <div class="panel-4"><span class="hop"></span></div>
                         <div class="panel-5">Hello<span class="hop">Pipes</span></div>
