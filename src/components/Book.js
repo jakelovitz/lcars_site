@@ -1,23 +1,17 @@
 import React from 'react';
-import './../assets/styling.css';
 
-function Book({ book }) {
-    return (
-      <div className="book">
-        <div className="book-thumbnail">
-          <img src={book.thumbnail} alt="Thumbnail" />
-        </div>
-        <div className="book-info">
-          <h2>{book.title}</h2>
-          <h3>{book.subtitle}</h3>
-          <p className="author">{`Author: ${book.author}`}</p>
-          <p>{`Genre: ${book.genre}`}</p>
-          <p>{`Reading Status: ${book.readingStatus}`}</p>
-          <p>{`Tags: ${book.tags}`}</p>
-        </div>
-      </div>
-    );
-  }
-  
-  export default Book;
-  
+const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, YearPublished, Genre, NumberOfPages, Tags }) => {
+  return (
+    <div className="book">
+      <h2>{Title}</h2>
+      {Subtitle && <h4>{Subtitle}</h4>}
+      <p>Author: {Author}</p>
+      {YearPublished &&       <p>Year Published: {YearPublished}</p>}
+      <p>Genre: {Genre}</p>
+      {NumberOfPages && <p>Number of Pages: {NumberOfPages}</p>}
+      {Tags && <p>Tags: {Tags}</p>}
+    </div>
+  );
+};
+
+export default Book;
