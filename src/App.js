@@ -1,13 +1,14 @@
 import * as React from "react";
 import './assets/styling.css';
+import ScrollToTopButton from "./components/ScrollToTop";
 
-function App({ header, footer, currentPage: CurrentPage, navigateToPage }) {
+function App({ header, footer, currentPage: CurrentPage, navigateToPage,}) {
   return (
     <div>
-      {header}
-      {/* Pass the footer as a prop to the CurrentPage */}
-      <CurrentPage onNavigate={navigateToPage} footer={footer} />
-    </div>
+    {header}
+    <CurrentPage onNavigate={navigateToPage} footer={footer}/>
+    <ScrollToTopButton class='scroll-to-top-button'/>
+  </div>
   );
 }
 
