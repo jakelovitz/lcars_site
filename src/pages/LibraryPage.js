@@ -1,33 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
+import fetchAndParseBookList from '../utils/useFetchAndParseBookList';
+import Book from './../components/Book'; // Adjust the import path as necessary
 
-function LibraryPage() {
-  const [htmlContent, setHtmlContent] = useState('');
-
-  useEffect(() => {
-    fetch('/BookList.html')
-      .then(response => response.text())
-      .then(html => {
-        // Parse the HTML string into a document object
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        // Example: Remove all <script> tags from the document
-        const scripts = doc.getElementsByTagName('script');
-        while (scripts.length > 0) {
-          scripts[0].parentNode.removeChild(scripts[0]);
-        }
-
-        // Example: Filter or manipulate other elements as needed
-
-        // Serialize the document back to an HTML string
-        const serializedHTML = doc.documentElement.outerHTML;
-
-        // Set the filtered HTML content into the state
-        setHtmlContent(serializedHTML);
-      });
-  }, []);
-
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-}
-
-export default LibraryPage;
+class LibraryPage extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        books: [],
+        loading: true,
+        error: null
+      };
+    }
+  
+    componentDidMount() {
+      this.fetchBooks();
+    }
+  
+    fetchBooks = () => {
+      fetchAndParseBookList()
+        .then(books => {
+          this.setState({
+            books: books,
+            loading: false
+          });
+        })
+        .catch(error => {
+          this.setState({
+            error: error,
+            loading: false
+          });
+        });
+    }
+  
+    render() {
+      const { loading, error, books } = this.state;
+  
+      if (loading) return <div>Loading books...</div>;
+      if (error) return <div>Error loading books: {error.message}</div>;
+  
+      return (
+        <div>
+          <h1>Library</h1>
+          <div className="book-list">
+            {books.map((book, index) => (
+              <Book key={index} {...book} />
+            ))}
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  export default LibraryPage;
