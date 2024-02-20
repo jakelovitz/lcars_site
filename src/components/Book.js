@@ -15,6 +15,7 @@ const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, YearPublished,
       {YearPublished && <p>Year Published: {YearPublished}</p>}
       {NumberOfPages && <p>Number of Pages: {NumberOfPages}</p>}
       {Tags && <p>Tags: {Tags}</p>}
+      <hr></hr>
     </div>
   );
 };
