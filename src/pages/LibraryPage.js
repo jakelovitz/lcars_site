@@ -77,10 +77,13 @@ class LibraryPage extends Component {
             <div class="block-4-floatbar"></div>
             </div>
           </div>
-            {/* page content here */}
             <div class="content">
-              <div class="flexbox">
                 <h1>Library</h1>
+                <p>I've spent the last few years putting my library together. Enjoy strolling through the titles.</p>
+                <div class="lcars-bar">
+              <div class="lcars-bar-inner"></div>
+            </div> 
+              <div class="flexbox">
                 <div className="book-list">
                 {books.map((book, index) => (
                     <Book key={index} {...book} />
