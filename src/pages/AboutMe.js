@@ -53,15 +53,26 @@ function AboutMe({ onNavigate, footer }) {
                         </div>
 
                         <div class="col">
-                            <p>Your Humble Software Engineer in Test</p>
-                            <p>Communication is not possible. The shuttle has no power. Using the gravitational pull of a star to slingshot back in time? We are going to Starbase Montgomery for Engineering consultations prompted by minor read-out anomalies. Probes have recorded unusual levels of geological activity in all five planetary systems. Assemble a team. Look at records of the Drema quadrant. Would these scans detect artificial transmissions as well as natural signals?</p>
-                            <p>Unidentified vessel travelling at sub warp speed, bearing 235.7. Fluctuations in energy readings from it, Captain. All transporters off. A strange set-up, but I'd say the graviton generator is depolarized. The dark colourings of the scrapes are the leavings of natural rubber, a type of non-conductive sole used by researchers experimenting with electricity. The molecules must have been partly de-phased by the anyon beam.</p>
+                            <p class="go-big">
+                                <span class="go-space-white">
+                            My continuing mission: to pioneer unparalleled quality in digital products; to design and develop test suites comprehensive in their scope, depth, and supporting documentation; to boldly ensure consistency and confidence like never before.</span>
+                            </p>
+                            {/* <p>Unidentified vessel travelling at sub warp speed, bearing 235.7. Fluctuations in energy readings from it, Captain. All transporters off. A strange set-up, but I'd say the graviton generator is depolarized. The dark colourings of the scrapes are the leavings of natural rubber, a type of non-conductive sole used by researchers experimenting with electricity. The molecules must have been partly de-phased by the anyon beam.</p> */}
+                            <p>Some of my key proficencies include, but are not limited to:</p>
+                            <ul class="lcars-list">
+                                <li>First item in a list</li>
+                                <li>Second list item</li>
+                                <li>Pretty decent at whistling</li>
+                            </ul>
                         </div>
                     </div>
-
-                    <p>I`m a QA Engineer with 4+ years of experience working with Electronic Health Records. I`ve formulated three pillars for the Enterprising QA Engineer (the EQAE!) to lean on:</p>
-                    <h3>Be a subject matter expert</h3>
-                    <p>Comprehensive knowledge is the bedrock of comprehensive testing, especially for an EHR. The EQAE has a thorough understanding of their product as a whole, a mastery of their functional areas in particular, and a deep appreciation for all the interactions and interplay in between the two.</p>
+                    <p>I`m a former QA Engineer/current SET with 6+ years of experience working with Electronic Health Records. I try to work by the following principles:</p>
+                    <h3>Be a Subject Matter Expert</h3>
+                    <p>Comprehensive knowledge is the bedrock of comprehensive testing, especially for an EHR. Effective QA necessitates a thorough understanding of your product as a whole, a mastery of your functional areas in particular, and a deep appreciation for all the interactions and interplay in between the two.</p>
+                    <h3>Mind the Code</h3>
+                    <p>Beyond surface-level understanding, excellence in QA requires delving into the technical underpinnings of the product. This involves regularly engaging with the codebase—even if not directly coding—to understand the scope of changes, pinpoint bugs, and grasp the underlying logic driving the software's behavior. Utilizing tools like Postman, Swagger, Splunk, and Bugsnag is essential for informed testing, bug investigation, workflow simulation, and addressing issues. This hands-on, investigative approach to ensure the software's internals are as robust as its user-facing features.</p>
+                    <h3>Try New Things</h3>
+                    <p></p>
                 </div>
                 
                 {footer}
