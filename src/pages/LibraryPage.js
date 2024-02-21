@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, state, setState, } from 'react';
 import fetchAndParseBookList from '../utils/useFetchAndParseBookList';
 import Book from './../components/Book'; // Adjust the import path as necessary
 
@@ -11,6 +11,58 @@ class LibraryPage extends Component {
       error: null
     };
   }
+  
+  useEffect = () => {
+    fetchAndParseBookList()
+      .then(books => {
+        const genres = [...new Set(books.map(book => book.Genre))];
+        setState({ books, genres, filteredBooks: books, loading: false });
+      })
+      .catch(error => setState({ error, loading: false }));
+  };
+
+  filterBooksByGenre = (genre) => {
+    const filteredBooks = state.books.filter(book => book.Genre === genre);
+    setState({ ...state, filteredBooks, currentGenre: genre });
+  };
+  
+  sortBooks = (criteria) => {
+    const sortedBooks = [...state.filteredBooks].sort((a, b) => {
+      if (criteria === 'Author') {
+        return a.Author.localeCompare(b.Author);
+      } else if (criteria === 'Title') {
+        return a.Title.localeCompare(b.Title);
+      }
+      return 0;
+    });
+    setState({ ...state, filteredBooks: sortedBooks, sortCriteria: criteria });
+  };
+
+  handleGenreChange = (genre) => {
+    this.setState({ currentGenre: genre }, () => {
+      this.filterBooksByGenre();
+      console.log(this.state.currentGenre)
+      console.log(this.state.filteredBooks)
+    });
+  };
+
+  filterBooksByGenre = () => {
+    const { books, currentGenre } = this.state;
+    const filteredBooks = currentGenre === 'All Genres'
+      ? books
+      : books.filter(book => book.Genre === currentGenre);
+    this.setState({ filteredBooks });
+  };
+
+  renderGenreButtons = () => {
+    const { genres } = this.state;
+    return genres.map(genre => (
+      <button key={genre} onClick={() => this.handleGenreChange(genre)}>
+        {genre}
+      </button>
+    ));
+  };
+  
   
   componentDidMount() {
     this.fetchBooks();
@@ -80,6 +132,7 @@ class LibraryPage extends Component {
             <div class="content">
                 <h1>Library</h1>
                 <p>I've spent the last few years putting my library together. Enjoy strolling through the titles.</p>
+                <button key={'History'} onClick={() => this.handleGenreChange('History')} >hello</button>
                 <div class="lcars-bar">
               <div class="lcars-bar-inner"></div>
             </div> 
