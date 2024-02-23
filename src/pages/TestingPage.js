@@ -16,13 +16,13 @@ function TestingPage({ onNavigate, footer }) {
                         <a onClick={() => onNavigate(2)} id="2">Library</a>
                     </div>
                     <div class="panel-4"><span class="hop"></span></div>
-                        <div class="panel-5">Hello<span class="hop">Pipes</span></div>
+                        <div class="panel-5"><span class="hop"></span></div>
                         <div class="panel-6"><span class="hop"></span></div>
                         <div class="panel-7"><span class="hop"></span></div>
                         <div class="panel-8"><span class="hop"></span></div>
-                        <div class="panel-9">And<span class="hop">Again</span></div>
+                        <div class="panel-9"><span class="hop"></span></div>
                     </div>
-                    <div class="panel-10">Oh and<span class="hop">Yet Again</span></div>
+                    <div class="panel-10"><span class="hop"></span></div>
                 </div>
 
                 <div class="right-frame">
@@ -48,11 +48,16 @@ function TestingPage({ onNavigate, footer }) {
                 <div class="content">
                     <div class="flexbox">
 
+                        <div class="col">
+                            <img style={{width: "100%", height: "100%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/GLaDOS.png'} alt="glados" />
+                        </div>
 
                         <div class="col">
-                            <p>This is gonna be a page all about testing</p>
-                            <p>Communication is not possible. The shuttle has no power. Using the gravitational pull of a star to slingshot back in time? We are going to Starbase Montgomery for Engineering consultations prompted by minor read-out anomalies. Probes have recorded unusual levels of geological activity in all five planetary systems. Assemble a team. Look at records of the Drema quadrant. Would these scans detect artificial transmissions as well as natural signals?</p>
-                            <p>Unidentified vessel travelling at sub warp speed, bearing 235.7. Fluctuations in energy readings from it, Captain. All transporters off. A strange set-up, but I'd say the graviton generator is depolarized. The dark colourings of the scrapes are the leavings of natural rubber, a type of non-conductive sole used by researchers experimenting with electricity. The molecules must have been partly de-phased by the anyon beam.</p>
+                            <p class="go-big">
+                                <span class="go-space-white">
+                                "You must really, really love to test." - GLADoS</span>
+                            </p>
+                            <p>She's not wrong - I really do</p>
                         </div>
                     </div>
                 </div>
