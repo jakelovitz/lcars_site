@@ -15,7 +15,7 @@ function Footer() {
                     </div>
                 </div>
                 <div class="footer-panel">
-                    <span class="hop">22</span>47
+                    <span class="hop"></span>
                 </div>
             </footer>
         </div>

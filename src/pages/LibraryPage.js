@@ -76,13 +76,13 @@ class LibraryPage extends Component {
                   <a onClick={() => onNavigate(2)} id="2">Library</a>
               </div>
               <div class="panel-4"><span class="hop"></span></div>
-                  <div class="panel-5">Hello<span class="hop">Pipes</span></div>
+                  <div class="panel-5"><span class="hop"></span></div>
                   <div class="panel-6"><span class="hop"></span></div>
                   <div class="panel-7"><span class="hop"></span></div>
                   <div class="panel-8"><span class="hop"></span></div>
-                  <div class="panel-9">And<span class="hop">Again</span></div>
+                  <div class="panel-9"><span class="hop"></span></div>
               </div>
-              <div class="panel-10">Oh and<span class="hop">Yet Again</span></div>
+              <div class="panel-10"><span class="hop"></span></div>
           </div>
 
           <div className="right-frame">
