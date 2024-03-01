@@ -9,8 +9,15 @@ const fetchAndParseBookList = () => {
         Papa.parse(csvText, {
           header: true,
           complete: (results) => {
-            console.log('results', results.data)
-            resolve(results.data); // Assuming you want the parsed CSV data
+            const transformedData = results.data.map(book => ({
+              ...book,
+              authorLastFirst: book["Author (Last, First)"], // Transforming to camelCase
+              yearPublished: parseInt(book["Year Published"], 10), // Also converting to integer
+              numberOfPages: parseInt(book["Number of Pages"], 10), // Converting string to integer
+              // Add similar transformations for other fields if necessary
+            }));
+            console.log('transformedData', transformedData);
+            resolve(transformedData);
           },
           error: (error) => {
             reject(error);

@@ -1,20 +1,21 @@
 import React from 'react';
 
-const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, YearPublished, Genre, NumberOfPages, Tags }) => {
+const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, yearPublished, Genre, numberOfPages, Tags }) => {
   return (
     <div className="book">
-
-        {/* <div class="lcars-text-bar">
-            <span>{Title}</span>
-        </div> */}
-
-      <h2>{Title}</h2>
+      <h3>{Title}</h3>
       {Subtitle && <h4>{Subtitle}</h4>}
-      <p>Author: {Author}</p>
-      <p>Genre: {Genre}</p>
-      {YearPublished && <p>Year Published: {YearPublished}</p>}
-      {NumberOfPages && <p>Number of Pages: {NumberOfPages}</p>}
-      {Tags && <p>Tags: {Tags}</p>}
+
+        <div class="flexbox">
+          <div class="col">
+            <p>Author: {Author}</p>
+            <p>Genre: {Genre}</p>
+          </div>
+          <div class="col">
+            {numberOfPages && <p>Number of Pages: {numberOfPages}</p>}
+            {yearPublished && <p>Year Published: {yearPublished}</p>}
+          </div>
+        </div>
       <hr></hr>
     </div>
   );

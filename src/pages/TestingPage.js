@@ -62,6 +62,10 @@ function TestingPage({ onNavigate, footer }) {
                     </div>
                 </div>
                 
+                <div class="lcars-bar">
+                    <div class="lcars-bar-inner"></div>
+                </div>
+                
                 {footer}
             
             </div>
