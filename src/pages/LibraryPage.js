@@ -60,32 +60,13 @@ class LibraryPage extends Component {
 
   render() {
     const { loading, error, filteredBooks, genres } = this.state;
-    const { onNavigate, footer } = this.props;
 
     if (loading) return <div>Loading books...</div>;
     if (error) return <div>Error loading books: {error.message}</div>;
 
     return (
-      <div class="wrap" id="gap">
-        <div class="left-frame">
-          <div>
-              <div class="panel-3"><span class="hop"></span></div>
-              <div class="sidebar-buttons">
-                  <a onClick={() => onNavigate(0)} id="0">About Me</a>
-                  <a onClick={() => onNavigate(1)} id="1">Testing</a>
-                  <a onClick={() => onNavigate(2)} id="2">Library</a>
-              </div>
-              <div class="panel-4"><span class="hop"></span></div>
-                  <div class="panel-5"><span class="hop"></span></div>
-                  <div class="panel-6"><span class="hop"></span></div>
-                  <div class="panel-7"><span class="hop"></span></div>
-                  <div class="panel-8"><span class="hop"></span></div>
-                  <div class="panel-9"><span class="hop"></span></div>
-              </div>
-              <div class="panel-10"><span class="hop"></span></div>
-          </div>
-
-          <div className="right-frame">
+      <div>
+        <div >
           <div className="content">
             <h1>Library</h1>
             <p>I've spent the last few years putting my library together. Enjoy strolling through the titles.</p>
@@ -104,7 +85,6 @@ class LibraryPage extends Component {
               ))}
             </div>
           </div>
-          {footer}
         </div>
       </div>
     );
