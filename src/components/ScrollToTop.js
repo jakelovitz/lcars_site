@@ -30,7 +30,7 @@ const ScrollToTopButton = () => {
     }, []);
 
     return (
-        <div class='wrap'>
+        <div className='wrap'>
             {isVisible && (
                 <div className="scroll-top" onClick={scrollToTop}>
                     <a href="#!" style={{ display: 'inline' }}>Scroll to Top</a>

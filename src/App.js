@@ -6,42 +6,42 @@ function App({ header, footer, currentPage: CurrentPage, navigateToPage,}) {
   return (
     <div>
       {header}
-      <div class="wrap" id="gap">
-        <div class="left-frame">
+      <div className="wrap" id="gap">
+        <div className="left-frame">
 
           <div>
-              <div class="panel-3"><span class="hop"></span></div>
-              <div class="sidebar-buttons">
+              <div className="panel-3"><span className="hop"></span></div>
+              <div className="sidebar-buttons">
                   <a onClick={() => navigateToPage(0)} id="0">About Me</a>
                   <a onClick={() => navigateToPage(1)} id="1">Testing</a>
                   <a onClick={() => navigateToPage(2)} id="2">Library</a>
               </div>
-              <div class="panel-4"><span class="hop"></span></div>
-                  <div class="panel-5"><span class="hop"></span></div>
-                  <div class="panel-6"><span class="hop"></span></div>
-                  <div class="panel-7"><span class="hop"></span></div>
-                  <div class="panel-8"><span class="hop"></span></div>
-                  <div class="panel-9"><span class="hop"></span></div>
+              <div className="panel-4"><span className="hop"></span></div>
+                  <div className="panel-5"><span className="hop"></span></div>
+                  <div className="panel-6"><span className="hop"></span></div>
+                  <div className="panel-7"><span className="hop"></span></div>
+                  <div className="panel-8"><span className="hop"></span></div>
+                  <div className="panel-9"><span className="hop"></span></div>
               </div>
-              <div class="panel-10"><span class="hop"></span></div>
+              <div className="panel-10"><span className="hop"></span></div>
           </div>
 
-          <div class="right-frame">
-              <div class="bar-panel">
-              <div class="bar-6"></div>
-              <div class="bar-7"></div>
-              <div class="bar-8"></div>
-              <div class="bar-9"><div class="bar-9-inside"></div></div>
+          <div className="right-frame">
+              <div className="bar-panel">
+              <div className="bar-6"></div>
+              <div className="bar-7"></div>
+              <div className="bar-8"></div>
+              <div className="bar-9"><div className="bar-9-inside"></div></div>
           </div>
               
-          <div class="runner">
-              <div class="corner-bg">
-                <div class="corner"></div>
+          <div className="runner">
+              <div className="corner-bg">
+                <div className="corner"></div>
               </div>
-              <div class="block-2"></div>
-              <div class="block-3"></div>
-              <div class="block-4b">
-              <div class="block-4-floatbar"></div>
+              <div className="block-2"></div>
+              <div className="block-3"></div>
+              <div className="block-4b">
+              <div className="block-4-floatbar"></div>
               </div>
           </div>
 
@@ -53,7 +53,7 @@ function App({ header, footer, currentPage: CurrentPage, navigateToPage,}) {
         </div>
 
       </div>
-      <ScrollToTopButton class='scroll-to-top-button'/>
+      <ScrollToTopButton className='scroll-to-top-button'/>
     </div>
   );
 }

@@ -5,20 +5,20 @@ function AboutMe() {
     return (
         <div >
             <div >
-                <div class="content">
-                    <div class="flexbox">
+                <div className="content">
+                    <div className="flexbox">
 
-                        <div class="col">
+                        <div className="col">
                             <img style={{width: "90%", height: "90%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes_alone.png'} alt="your humble web developer" />
                         </div>
 
-                        <div class="col">
-                            <p class="go-big">
-                                <span class="go-space-white">
+                        <div className="col">
+                            <p className="go-big">
+                                <span className="go-space-white">
                             My continuing mission: to pioneer unparalleled quality in digital products; to design and develop test suites comprehensive in their scope, depth, and supporting documentation; to boldly ensure consistency and confidence like never before.</span>
                             </p>
                             <p>Some of my key proficencies include, but are not limited to:</p>
-                            <ul class="lcars-list">
+                            <ul className="lcars-list">
                                 <li>First item in a list</li>
                                 <li>Second list item</li>
                                 <li>Pretty decent at whistling</li>
