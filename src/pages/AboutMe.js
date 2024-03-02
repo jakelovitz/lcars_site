@@ -26,7 +26,7 @@ function AboutMe() {
                         </div>
                     </div>
                     <h1>On Duty</h1>
-                    <p>I`m a former QA Engineer/current SET with 6+ years of experience working with Electronic Health Records. I try to work by the following principles:</p>
+                    <p>I'm my mind, I'm a Code Integrity Officer, though in my near ten years of ensuring software products best meet the needs of its end users I've held such titles as Software Tester, Software (Development) Engineer in Test, and Quality Assurance Engineer. Ultimately, though, I help teams in their pursuit of that most elusive of goals: quality. There are some of the pillars I lean on </p>
                     <h3>Be a Subject Matter Expert</h3>
                     <p>Comprehensive knowledge is the bedrock of comprehensive testing, especially for an EHR. Effective QA necessitates a thorough understanding of your product as a whole, a mastery of your functional areas in particular, and a deep appreciation for all the interactions and interplay in between the two.</p>
                     <h3>Mind the Code</h3>

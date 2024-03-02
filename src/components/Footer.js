@@ -4,9 +4,7 @@ import './../assets/styling.css';
 function Footer() {
     
     return (  
-
         <div className="footer" >
-
             <footer>
                 <div className="footer-inside">
                     <div className="footer-text">
@@ -19,9 +17,7 @@ function Footer() {
                 </div>
             </footer>
         </div>
-
     );
-
 }
 
 export default Footer;
