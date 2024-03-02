@@ -6,12 +6,12 @@ const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, yearPublished,
       <h3>{Title}</h3>
       {Subtitle && <h4>{Subtitle}</h4>}
 
-        <div class="flexbox">
-          <div class="col">
+        <div className="flexbox">
+          <div className="col">
             <p>Author: {Author}</p>
             <p>Genre: {Genre}</p>
           </div>
-          <div class="col">
+          <div className="col">
             {numberOfPages && <p>Number of Pages: {numberOfPages}</p>}
             {yearPublished && <p>Year Published: {yearPublished}</p>}
           </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react'; // Ensure useState is imported
+import ReactDOM from 'react-dom/client'; // Import from 'react-dom/client'
 import App from './App';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,14 +8,13 @@ import TestingPage from './pages/TestingPage';
 import LibraryPage from './pages/LibraryPage';
 import reportWebVitals from './reportWebVitals';
 
-// Define the initial state and any other global states here
 const initialState = {
   currentPageIndex: 0,
   pages: [AboutMe, TestingPage, LibraryPage],
 };
 
 function Index() {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = React.useState(initialState); // Use React.useState
 
   const navigateToPage = (pageIndex) => {
     setState({ ...state, currentPageIndex: pageIndex });
@@ -33,4 +32,6 @@ function Index() {
   );
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+// Use createRoot to create a root and then render your component
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Index />);

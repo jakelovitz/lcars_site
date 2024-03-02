@@ -4,24 +4,20 @@ import './../assets/styling.css';
 function Footer() {
     
     return (  
-
-        <div class="footer" >
-
+        <div className="footer" >
             <footer>
-                <div class="footer-inside">
-                    <div class="footer-text">
+                <div className="footer-inside">
+                    <div className="footer-text">
                         <p>LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com </a></p>
                         <p>Translated into JSX and modified for this site by Jake Lovitz</p>
                     </div>
                 </div>
-                <div class="footer-panel">
-                    <span class="hop"></span>
+                <div className="footer-panel">
+                    <span className="hop"></span>
                 </div>
             </footer>
         </div>
-
     );
-
 }
 
 export default Footer;

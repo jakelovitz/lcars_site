@@ -1,64 +1,24 @@
 import React from 'react';
 import './../assets/styling.css';
 
-function AboutMe({ onNavigate, footer }) {
+function AboutMe() {
     return (
+        <div >
+            <div >
+                <div className="content">
+                    <div className="flexbox">
 
-        <div class="wrap" id="gap">
-
-            <div class="left-frame">
-
-                <div>
-                    <div class="panel-3"><span class="hop"></span></div>
-                    <div class="sidebar-buttons">
-                        <a onClick={() => onNavigate(0)} id="0">About Me</a>
-                        <a onClick={() => onNavigate(1)} id="1">Testing</a>
-                        <a onClick={() => onNavigate(2)} id="2">Library</a>
-                    </div>
-                    <div class="panel-4"><span class="hop"></span></div>
-                        <div class="panel-5"><span class="hop"></span></div>
-                        <div class="panel-6"><span class="hop"></span></div>
-                        <div class="panel-7"><span class="hop"></span></div>
-                        <div class="panel-8"><span class="hop"></span></div>
-                        <div class="panel-9"><span class="hop"></span></div>
-                    </div>
-                    <div class="panel-10"><span class="hop"></span></div>
-                </div>
-
-                <div class="right-frame">
-                    <div class="bar-panel">
-                    <div class="bar-6"></div>
-                    <div class="bar-7"></div>
-                    <div class="bar-8"></div>
-                    <div class="bar-9"><div class="bar-9-inside"></div></div>
-                </div>
-                
-                <div class="runner">
-                    <div class="corner-bg">
-                        <div class="corner"></div>
-                    </div>
-                    <div class="block-2"></div>
-                    <div class="block-3"></div>
-                    <div class="block-4b">
-                    <div class="block-4-floatbar"></div>
-                    </div>
-                </div>
-                
-                {/* page content here */}
-                <div class="content">
-                    <div class="flexbox">
-
-                        <div class="col">
+                        <div className="col">
                             <img style={{width: "90%", height: "90%", objectFit: 'contain'}} src={process.env.PUBLIC_URL + '/pipes_alone.png'} alt="your humble web developer" />
                         </div>
 
-                        <div class="col">
-                            <p class="go-big">
-                                <span class="go-space-white">
+                        <div className="col">
+                            <p className="go-big">
+                                <span className="go-space-white">
                             My continuing mission: to pioneer unparalleled quality in digital products; to design and develop test suites comprehensive in their scope, depth, and supporting documentation; to boldly ensure consistency and confidence like never before.</span>
                             </p>
                             <p>Some of my key proficencies include, but are not limited to:</p>
-                            <ul class="lcars-list">
+                            <ul className="lcars-list">
                                 <li>First item in a list</li>
                                 <li>Second list item</li>
                                 <li>Pretty decent at whistling</li>
@@ -66,7 +26,7 @@ function AboutMe({ onNavigate, footer }) {
                         </div>
                     </div>
                     <h1>On Duty</h1>
-                    <p>I`m a former QA Engineer/current SET with 6+ years of experience working with Electronic Health Records. I try to work by the following principles:</p>
+                    <p>I'm my mind, I'm a Code Integrity Officer, though in my near ten years of ensuring software products best meet the needs of its end users I've held such titles as Software Tester, Software (Development) Engineer in Test, and Quality Assurance Engineer. Ultimately, though, I help teams in their pursuit of that most elusive of goals: quality. There are some of the pillars I lean on </p>
                     <h3>Be a Subject Matter Expert</h3>
                     <p>Comprehensive knowledge is the bedrock of comprehensive testing, especially for an EHR. Effective QA necessitates a thorough understanding of your product as a whole, a mastery of your functional areas in particular, and a deep appreciation for all the interactions and interplay in between the two.</p>
                     <h3>Mind the Code</h3>
@@ -82,11 +42,7 @@ function AboutMe({ onNavigate, footer }) {
                     <h3>Dual Alliance Fan</h3>
                     <p>This is not a reference to baseball, in which case the New York Mets are the only team I ever have and ever will support (Braves are a distant second). I'm referring to the age old divide between Star Wars and Star Trek fans. In the folly of my youth I stood firmly on the former side of that divide, but my flag was planted in naught but the shifting sands of ignorance.</p>
                 </div>
-                
-                {footer}
-            
             </div>
-
         </div>  
     )
 }
