@@ -1,21 +1,21 @@
 import React from 'react';
 
-const Book = ({ Title, Subtitle, Series, Author, AuthorLastFirst, yearPublished, Genre, numberOfPages, Tags }) => {
+const Book = ({ title, subtitle, series, authors, genre, subGenre }) => {
   return (
     <div className="book">
-      <h3>{Title}</h3>
-      {Subtitle && <h4>{Subtitle}</h4>}
+      <h3>{title}</h3>
+      {subtitle && <h4>{subtitle}</h4>}
 
-        <div className="flexbox">
-          <div className="col">
-            <p>Author: {Author}</p>
-            <p>Genre: {Genre}</p>
-          </div>
-          <div className="col">
-            {numberOfPages && <p>Number of Pages: {numberOfPages}</p>}
-            {yearPublished && <p>Year Published: {yearPublished}</p>}
-          </div>
+      <div className="flexbox">
+        <div className="col">
+          <p>Author: {authors}</p>
+          <p>Genre: {genre}</p>
+          {subGenre && <p>Sub-Genre: {subGenre}</p>}
         </div>
+        <div className="col">
+          {series && <p>Series: {series}</p>}
+        </div>
+      </div>
       <hr></hr>
     </div>
   );
