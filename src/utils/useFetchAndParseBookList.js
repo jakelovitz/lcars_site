@@ -1,21 +1,26 @@
 import Papa from 'papaparse';
-import csvFile from './../assets/BookList.csv';
+
+const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS3e4RAFBS130gqzEmRvVn0rNSFrpkGgWe4S5DRFRrbV3nd-Bm1U0Yz0ZdnEuOKHC1t-7YlVOff-13k/pub?output=csv';
 
 const fetchAndParseBookList = () => {
   return new Promise((resolve, reject) => {
-    fetch(csvFile)
+    fetch(googleSheetURL)
       .then(response => response.text())
       .then(csvText => {
         Papa.parse(csvText, {
           header: true,
           complete: (results) => {
-            const transformedData = results.data.map(book => ({
-              ...book,
-              authorLastFirst: book["Author (Last, First)"], // Transforming to camelCase
-              yearPublished: parseInt(book["Year Published"], 10), // Also converting to integer
-              numberOfPages: parseInt(book["Number of Pages"], 10), // Converting string to integer
-              // Add similar transformations for other fields if necessary
-            }));
+            const transformedData = results.data
+              //.filter(book => !book["Exclude"]) // Exclude rows where the 'Exclude' column is not empty
+              .map(book => ({
+                title: book["Title"],
+                subtitle: book["Subtitle"],
+                authors: book["Author(s)"],
+                genre: book["Genre"],
+                subGenre: book["Sub-Genre"],
+                series: book["Series"],
+                volume: book["Volume"] ? parseInt(book["Volume"], 10) : undefined, // Parse volume to int if present
+              }));
             console.log('transformedData', transformedData);
             resolve(transformedData);
           },
