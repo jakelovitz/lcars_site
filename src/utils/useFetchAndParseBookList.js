@@ -19,7 +19,7 @@ const fetchAndParseBookList = () => {
                 genre: book["Genre"],
                 subGenre: book["Sub-Genre"] && book["Sub-Genre"].trim() ? book["Sub-Genre"] : "Not Specified",
                 series: book["Series"],
-                volume: book["Volume"] ? parseInt(book["Volume"], 10) : undefined, // Parse volume to int if present
+                volume: book["Volume"] // Parse volume to int if present
               }));
             console.log('transformedData', transformedData);
             resolve(transformedData);
