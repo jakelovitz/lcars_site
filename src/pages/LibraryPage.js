@@ -101,24 +101,32 @@ class LibraryPage extends Component {
           <div className="content">
             <h1>Library</h1>
             <p>I've spent the last few years putting my library together. Enjoy strolling through the titles.</p>
-            <Select
-              value={currentGenre}
-              onChange={this.handleGenreChange}
-              options={genres}
-              styles={customSelectStyles}
-              isClearable={true}
-              placeholder="Select a genre..."
-            />
-            {currentGenre && subGenres.length > 0 && (
-              <Select
-                value={currentSubGenre}
-                onChange={this.handleSubGenreChange}
-                options={subGenres}
-                styles={customSelectStyles}
-                isClearable={true}
-                placeholder="Select a sub-genre..."
-              />
-            )}
+
+            <div className="flexbox">
+              <div className="col">
+                <Select
+                  value={currentGenre}
+                  onChange={this.handleGenreChange}
+                  options={genres}
+                  styles={customSelectStyles}
+                  isClearable={true}
+                  placeholder="Select a genre..."
+                />
+                </div>
+                <div className="col">
+                {currentGenre && subGenres.length > 0 && (
+                  <Select
+                    value={currentSubGenre}
+                    onChange={this.handleSubGenreChange}
+                    options={subGenres}
+                    styles={customSelectStyles}
+                    isClearable={true}
+                    placeholder="Select a sub-genre..."
+                  />
+                )}
+              </div>
+            </div>
+
             <div className="book-list">
               {filteredBooks.map((book, index) => (
                 <Book key={index} {...book} />
