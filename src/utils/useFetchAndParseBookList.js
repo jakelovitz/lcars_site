@@ -11,13 +11,13 @@ const fetchAndParseBookList = () => {
           header: true,
           complete: (results) => {
             const transformedData = results.data
-              //.filter(book => !book["Exclude"]) // Exclude rows where the 'Exclude' column is not empty
+              .filter(book => !book["Exclude"]) // Exclude rows where the 'Exclude' column is not empty
               .map(book => ({
                 title: book["Title"],
                 subtitle: book["Subtitle"],
                 authors: book["Author(s)"],
                 genre: book["Genre"],
-                subGenre: book["Sub-Genre"],
+                subGenre: book["Sub-Genre"] && book["Sub-Genre"].trim() ? book["Sub-Genre"] : "Not Specified",
                 series: book["Series"],
                 volume: book["Volume"] ? parseInt(book["Volume"], 10) : undefined, // Parse volume to int if present
               }));

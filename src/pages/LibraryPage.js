@@ -49,10 +49,10 @@ class LibraryPage extends Component {
   };
 
   handleGenreChange = selectedOption => {
-    const { books } = this.state;
+    // const { books } = this.state;
     this.setState({
       currentGenre: selectedOption,
-      currentSubGenre: null, // Reset sub-genre selection
+      currentSubGenre: null
     }, () => {
       this.filterBooksByGenre();
       this.updateSubGenres();
@@ -62,9 +62,10 @@ class LibraryPage extends Component {
   updateSubGenres = () => {
     const { books, currentGenre } = this.state;
     if (currentGenre && currentGenre.value !== 'All') {
-      const subGenres = [...new Set(books.filter(book => book.genre === currentGenre.value).map(book => book['Sub-Genre']))]
+      const subGenres = [...new Set(books.filter(book => book.genre === currentGenre.value).map(book => book['subGenre']))]
         .map(subGenre => ({ value: subGenre, label: subGenre }));
       this.setState({ subGenres });
+      console.log('subgenres', subGenres)
     } else {
       this.setState({ subGenres: [] });
     }
@@ -78,7 +79,7 @@ class LibraryPage extends Component {
       filteredBooks = filteredBooks.filter(book => book.genre === currentGenre.value);
     }
     if (currentSubGenre && currentSubGenre.value !== 'All') {
-      filteredBooks = filteredBooks.filter(book => book['Sub-Genre'] === currentSubGenre.value);
+      filteredBooks = filteredBooks.filter(book => book['subGenre'] === currentSubGenre.value);
     }
 
     this.setState({ filteredBooks });
