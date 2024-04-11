@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Book = ({ title, subtitle, series, authors, genre, subGenre, volume }) => {
+const Book = ({ title, subtitle, series, authors, genre, subGenre, isbn, volume }) => {
   return (
     <div className="book">
       <h3>{title}</h3>
@@ -8,6 +8,9 @@ const Book = ({ title, subtitle, series, authors, genre, subGenre, volume }) => 
       {series && <p>{series}, Volume {volume} </p>}
 
       <div className="flexbox">
+        <div>
+        <img src={`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`} alt={`${title} cover`} />
+        </div>
         <div className="col">
           <p>Author: {authors}</p>
           <p>Genre: {genre}</p>
