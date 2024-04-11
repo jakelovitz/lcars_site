@@ -79,7 +79,7 @@ class AboutMe extends React.Component {
                         <div class="buttons">
                             <a onClick={() => this.handleButtonClick('Movies')}>Movies</a>
                             <a onClick={() => this.handleButtonClick('Albums')}>Albums</a>
-                            <a onClick={() => this.handleButtonClick('Something')}>button 03</a>
+                            {/* <a onClick={() => this.handleButtonClick('Something')}>button 03</a> */}
                             <a onClick={() => this.handleButtonClick('Spaceships')}>Spaceships</a>
                             <a onClick={() => this.handleButtonClick('Books')}>Books</a>
                         </div>

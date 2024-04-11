@@ -18,6 +18,7 @@ const fetchAndParseBookList = () => {
                 authors: book["Author(s)"],
                 genre: book["Genre"],
                 subGenre: book["Sub-Genre"] && book["Sub-Genre"].trim() ? book["Sub-Genre"] : "Not Specified",
+                isbn: book["ISBN"],
                 series: book["Series"],
                 volume: book["Volume"] // Parse volume to int if present
               }));
