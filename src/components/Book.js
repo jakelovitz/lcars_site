@@ -3,7 +3,7 @@ import React from 'react';
 const Book = ({ title, subtitle, series, authors, genre, subGenre, olid, volume }) => {
   return (
     <div className="book">
-      <h3>{title}</h3>
+      <h3><a href={`https://openlibrary.org/works/${olid}`} target="_blank" rel="noopener noreferrer">{title}</a></h3>
       {subtitle && <h4>{subtitle}</h4>}
       {series && <p>{series}, Volume {volume} </p>}
 

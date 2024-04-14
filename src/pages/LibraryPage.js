@@ -24,6 +24,7 @@ class LibraryPage extends Component {
       currentSubGenre: null,
       loading: true,
       error: null,
+      sortBy: 'author', // 'author' or 'title'
     };
   }
 
@@ -49,7 +50,6 @@ class LibraryPage extends Component {
   };
 
   handleGenreChange = selectedOption => {
-    // const { books } = this.state;
     this.setState({
       currentGenre: selectedOption,
       currentSubGenre: null
@@ -72,21 +72,43 @@ class LibraryPage extends Component {
   };
 
   filterBooksByGenre = () => {
-    const { books, currentGenre, currentSubGenre } = this.state;
+    const { books, currentGenre, currentSubGenre, sortBy } = this.state;
     let filteredBooks = books;
-
+  
     if (currentGenre && currentGenre.value !== 'All') {
       filteredBooks = filteredBooks.filter(book => book.genre === currentGenre.value);
     }
     if (currentSubGenre && currentSubGenre.value !== 'All') {
       filteredBooks = filteredBooks.filter(book => book['subGenre'] === currentSubGenre.value);
     }
-
+  
+    filteredBooks = sortBy === 'author' ? filteredBooks.sort((a, b) => {
+      const authorA = a.sorted_authors ? a.sorted_authors.toUpperCase() : '';
+      const authorB = b.sorted_authors ? b.sorted_authors.toUpperCase() : '';
+      return authorA.localeCompare(authorB);
+    }) : filteredBooks.sort((a, b) => a.title.localeCompare(b.title));
+  
     this.setState({ filteredBooks });
-  };
+  };  
 
   handleSubGenreChange = selectedOption => {
     this.setState({ currentSubGenre: selectedOption }, this.filterBooksByGenre);
+  };
+
+  sortByTitle = () => {
+    const { filteredBooks } = this.state;
+    const sortedBooks = [...filteredBooks].sort((a, b) => a.title.localeCompare(b.title));
+    this.setState({ filteredBooks: sortedBooks, sortBy: 'title' });
+  };
+  
+  sortByAuthor = () => {
+    const { filteredBooks } = this.state;
+    const sortedBooks = [...filteredBooks].sort((a, b) => {
+      const authorA = a.sorted_authors ? a.sorted_authors.toUpperCase() : '';
+      const authorB = b.sorted_authors ? b.sorted_authors.toUpperCase() : '';
+      return authorA.localeCompare(authorB);
+    });
+    this.setState({ filteredBooks: sortedBooks, sortBy: 'author' });
   };
 
   render() {
@@ -125,6 +147,23 @@ class LibraryPage extends Component {
                   />
                 )}
               </div>
+            </div>
+
+            <div className="flexbox">
+              <div className='col'>
+                <div class="buttons">
+                  <a onClick={this.sortByAuthor}>Sort by Author</a>
+                </div>
+              </div>
+              <div className='col'>
+                <div class="buttons">
+                  <a onClick={this.sortByTitle}>Sort by Title</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lcars-text-bar">
+              <span>Sorted by: {this.state.sortBy === 'author' ? 'Author' : 'Title'}</span>
             </div>
 
             <div className="book-list">
