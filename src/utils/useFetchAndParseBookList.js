@@ -16,6 +16,7 @@ const fetchAndParseBookList = () => {
                 title: book["Title"],
                 subtitle: book["Subtitle"],
                 authors: book["Author(s)"],
+                sorted_authors: book["Author(s) - Last Name"],
                 genre: book["Genre"],
                 subGenre: book["Sub-Genre"] && book["Sub-Genre"].trim() ? book["Sub-Genre"] : "Not Specified",
                 isbn: book["ISBN"],
@@ -23,7 +24,7 @@ const fetchAndParseBookList = () => {
                 series: book["Series"],
                 volume: book["Volume"] // Parse volume to int if present
               }));
-            console.log('transformedData', transformedData);
+            // console.log('transformedData', transformedData);
             resolve(transformedData);
           },
           error: (error) => {
