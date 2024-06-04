@@ -140,7 +140,9 @@ class LibraryPage extends Component {
         <div>
           <div className="content">
             <h1>Library</h1>
-            <p>I've spent the last few years putting my library together. Enjoy strolling through the titles.</p>
+            <blockquote>A bookshelf is as particular to its owner as are his or her clothes; a personality is stamped on a library just as a shoe is shaped by the foot.</blockquote>
+            <p class="go-right"><span class="go-space-white">— Alan Bennett</span></p>
+            <p>As much as I love to read books, I have a rivalling fondness for both collecting and simply being around them. As such, I've derived tremendous joy in compiling the following library, so much so that I wanted to share it with anyone interested. Enjoy strolling through the titles.</p>
 
             <div className="flexbox">
               <div className="col">
