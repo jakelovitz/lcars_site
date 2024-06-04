@@ -15,7 +15,10 @@ function TestingPage() {
                                 <span className="go-space-white">
                                 "Since you went to all the trouble of waking me up, you must really, really love to test." - GLaDOS</span>
                             </p>
-                            <p>I really did love testing the Aperture Science Handheld Portal Device with GlaDOS circa 2008-2011. Nowadays (circa 2015 - present day), however, I've focused on testing software, primarily that one final frontier of applications: the Electronic Health Record.</p>
+                            <p>I really did love testing the Aperture Science Handheld Portal Device with GlaDOS circa 2008-2011. Nowadays (circa 2015 - present day), however, I've shifted to my focus from portals* to protocols**, primarily within that one final frontier of Software applications: the Electronic Health Record.
+                            </p>
+                            <p>*Not entirely true: I have tested a couple of patient portals</p>
+                            <p>**and APIs, databases, front ends, back ends, etc</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +37,7 @@ function TestingPage() {
                     <blockquote>Testing is the process of executing a program with the intent of finding the right information.</blockquote>
                     <p>Which is all very well and good, but still begs the question of how, exactly, one goes about doing that. Well, unlike the basics of the 2008 video game Portal, and it's 2011 successor, it turns out that software testing is quite like software development - it's actually a pretty deep field</p>
                     <p>The Pyramid</p>
-                </div>
+                </div> 
             </div>
         </div>  
     )

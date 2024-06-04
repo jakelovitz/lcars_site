@@ -21,16 +21,19 @@ class AboutMe extends React.Component {
     generateList = () => {
         const { selectedButton } = this.state;
         if (!selectedButton) return null;
-
+    
         const thingData = favoriteThings.find(thing => thing.name === selectedButton);
         if (!thingData) return null;
-
+    
         return (
             <div>
                 <p>{thingData.blurb}</p>
                 <ul className="lcars-list">
                     {thingData.items.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <React.Fragment key={index}>
+                            <li>{item.text}</li>
+                            <p>{item.description}</p>
+                        </React.Fragment>
                     ))}
                 </ul>
             </div>
@@ -63,23 +66,11 @@ class AboutMe extends React.Component {
                         </div>
 
                         <p>When not chasing down abstract notions in abstract places...something something</p>
-                        <blockquote>
-                            More and more I've come to think…that to call plays or stories or poems “good” or “bad” is often not very illuminating, whereas it can at times be extremely helpful to notice that “right now, when I read this particular poems, I feel well, I feel happy, I feel that I am getting something that I have needed”. It's not that these poems are “the best” poems or that they're “better” than certain others, but that for you, now, they are important and right.
-                        </blockquote>
-                        <p className='go-right'>Wallace Shawn</p>
-                        <p>
-                            I love how this quote lays bare how personal the relationship between a piece of art and the person experiencing it is. It's not to say that almost any object of art doesn't belong to a specific school which has it's own criteria for what might constite a 'good' work of art in said school.
-                            Which also called to mind another saying I once heard nad has lived rent free in my head ever since
-                        </p>
-                        <blockquote>
-                            No person ever steps in the same river twice, for it's not the same river and they're not the same person.
-                        </blockquote>
-                        <p className='go-right'>Heraclitus</p>
 
                         <div class="buttons">
                             <a onClick={() => this.handleButtonClick('Movies')}>Movies</a>
                             <a onClick={() => this.handleButtonClick('Albums')}>Albums</a>
-                            {/* <a onClick={() => this.handleButtonClick('Something')}>button 03</a> */}
+                            <a onClick={() => this.handleButtonClick('Pokémon')}>Pokemon</a>
                             <a onClick={() => this.handleButtonClick('Spaceships')}>Spaceships</a>
                             <a onClick={() => this.handleButtonClick('Books')}>Books</a>
                         </div>
