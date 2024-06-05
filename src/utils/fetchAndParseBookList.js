@@ -1,4 +1,5 @@
 import Papa from 'papaparse';
+import { sortBooks } from './sortBooks'; // Adjust the path as necessary
 
 const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS3e4RAFBS130gqzEmRvVn0rNSFrpkGgWe4S5DRFRrbV3nd-Bm1U0Yz0ZdnEuOKHC1t-7YlVOff-13k/pub?output=csv';
 
@@ -24,7 +25,9 @@ const fetchAndParseBookList = () => {
                 series: book["Series"],
                 volume: book["Volume"] ? parseInt(book["Volume"], 10) : null // Parse volume to int if present
               }));
-            resolve(transformedData);
+
+            const sortedData = sortBooks(transformedData);
+            resolve(sortedData);
           },
           error: (error) => {
             reject(error);
@@ -36,4 +39,3 @@ const fetchAndParseBookList = () => {
 };
 
 export default fetchAndParseBookList;
-

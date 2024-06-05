@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import fetchAndParseBookList from '../utils/useFetchAndParseBookList';
+import fetchAndParseBookList from '../utils/fetchAndParseBookList';
 import Book from './../components/Book';
+import { sortBooks } from '../utils/sortBooks'; // Adjust the path as necessary
 
 const customSelectStyles = {
   option: (provided, state) => ({
@@ -28,8 +29,15 @@ class LibraryPage extends Component {
     };
   }
 
+  state = {
+    filteredBooks: [],
+    sortBy: 'author', // Default sort
+  };
+
   componentDidMount() {
-    this.fetchBooks();
+    fetchAndParseBookList().then((books) => {
+      this.setState({ filteredBooks: books });
+    });
   }
 
   fetchBooks = () => {
@@ -95,33 +103,20 @@ class LibraryPage extends Component {
     this.setState({ currentSubGenre: selectedOption }, this.filterBooksByGenre);
   };
 
-  sortByTitle = () => {
-    const { filteredBooks } = this.state;
-    const sortedBooks = [...filteredBooks].sort((a, b) => a.title.localeCompare(b.title));
-    this.setState({ filteredBooks: sortedBooks, sortBy: 'title' });
-  };
-  
   sortByAuthor = () => {
     const { filteredBooks } = this.state;
-    const sortedBooks = [...filteredBooks].sort((a, b) => {
-      const authorA = a.sorted_authors ? a.sorted_authors.toUpperCase() : '';
-      const authorB = b.sorted_authors ? b.sorted_authors.toUpperCase() : '';
-      if (authorA !== authorB) {
-        return authorA.localeCompare(authorB);
-      }
-      
-      const seriesA = a.series ? a.series.toUpperCase() : 'ZZZZ';
-      const seriesB = b.series ? b.series.toUpperCase() : 'ZZZZ';
-      if (seriesA !== seriesB) {
-        return seriesA.localeCompare(seriesB);
-      }
-      
-      const volumeA = a.volume !== null ? a.volume : Infinity;
-      const volumeB = b.volume !== null ? b.volume : Infinity;
-
-      return volumeA - volumeB;
-    });
+    const sortedBooks = sortBooks([...filteredBooks]);
     this.setState({ filteredBooks: sortedBooks, sortBy: 'author' });
+  };
+
+  sortByTitle = () => {
+    const { filteredBooks } = this.state;
+    const sortedBooks = [...filteredBooks].sort((a, b) => {
+      const titleA = a.title ? a.title.toUpperCase() : '';
+      const titleB = b.title ? b.title.toUpperCase() : '';
+      return titleA.localeCompare(titleB);
+    });
+    this.setState({ filteredBooks: sortedBooks, sortBy: 'title' });
   };
 
 
