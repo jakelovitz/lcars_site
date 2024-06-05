@@ -104,29 +104,27 @@ class LibraryPage extends Component {
   sortByAuthor = () => {
     const { filteredBooks } = this.state;
     const sortedBooks = [...filteredBooks].sort((a, b) => {
-      // Normalize author names to ensure case-insensitive comparison
       const authorA = a.sorted_authors ? a.sorted_authors.toUpperCase() : '';
       const authorB = b.sorted_authors ? b.sorted_authors.toUpperCase() : '';
       if (authorA !== authorB) {
         return authorA.localeCompare(authorB);
       }
       
-      // Normalize series names to ensure case-insensitive comparison
-      const seriesA = a.series ? a.series.toUpperCase() : 'ZZZZ'; // Using 'ZZZZ' to ensure books without series go last
+      const seriesA = a.series ? a.series.toUpperCase() : 'ZZZZ';
       const seriesB = b.series ? b.series.toUpperCase() : 'ZZZZ';
       if (seriesA !== seriesB) {
         return seriesA.localeCompare(seriesB);
       }
       
-      // Compare volume numbers, parsing them as integers
-      const volumeA = parseInt(a.volume, 10);
-      const volumeB = parseInt(b.volume, 10);
-      
-      // Sort by volume, considering cases where volume might not be a valid number
-      return (volumeA || 0) - (volumeB || 0); // Defaults to 0 if NaN
+      const volumeA = a.volume !== null ? a.volume : Infinity;
+      const volumeB = b.volume !== null ? b.volume : Infinity;
+
+      return volumeA - volumeB;
     });
     this.setState({ filteredBooks: sortedBooks, sortBy: 'author' });
   };
+
+
   
 
   render() {

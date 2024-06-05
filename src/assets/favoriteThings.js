@@ -3,9 +3,9 @@ const favoriteThings = [
       name: 'Movies',
       blurb: 'eyo movies',
       items: [
-          { text: 'Star Wars Episode V', description: 'Description for Item 1' },
-          { text: 'The Big Lebowski', description: 'I am a man of a certain demographic so this was bound to make the cut. Feel free to disagree but thats just like, your opinion man. Come up with a long list of why the movies bad per some cinematic standards and you wont be wrong, youll just be an asshole.' },
-          { text: 'My Dinner with Andre', description: 'Description for Item 2' }
+          { text: 'Star Wars Episode V', description: 'Classic' },
+          { text: 'The Big Lebowski', description: `I am a guy of a certain age so it's probably not all that surprising this one made the cut` },
+          { text: 'My Dinner with Andre', description: 'Every time I watch this movie I fixate on something different, which provides a whole new lens through which to view the entire film.' }
       ]
     },
     {
@@ -22,7 +22,7 @@ const favoriteThings = [
       name: 'Pokémon',
       blurb: 'eyo Pokémon',
       items: [
-          { text: 'Dragonite', description: 'Description for Item 1' },
+          { text: 'Dragonite', description: `Sure, it looks kind of dopey, but Dragons are the best and this is the coolest one in the club` },
           { text: 'Mewtwo', description: 'Description for Item 2' },
           { text: 'Charizard', description: 'Description for Item 2' }
       ]

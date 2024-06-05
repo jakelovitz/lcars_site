@@ -16,9 +16,6 @@ const Book = ({ title, subtitle, series, authors, genre, subGenre, olid, volume 
           <p>Genre: {genre}</p>
           <p>Sub-Genre: {subGenre}</p>
         </div>
-        {/* <div className="col">
-          {series && <p>Series: {series}</p>}
-        </div> */}
       </div>
       <hr></hr>
     </div>
