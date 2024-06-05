@@ -22,9 +22,8 @@ const fetchAndParseBookList = () => {
                 isbn: book["ISBN"],
                 olid: book["OLID"],
                 series: book["Series"],
-                volume: book["Volume"] // Parse volume to int if present
+                volume: book["Volume"] ? parseInt(book["Volume"], 10) : null // Parse volume to int if present
               }));
-            // console.log('transformedData', transformedData);
             resolve(transformedData);
           },
           error: (error) => {

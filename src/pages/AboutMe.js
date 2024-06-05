@@ -65,7 +65,7 @@ class AboutMe extends React.Component {
                             <span>Off Duty</span>
                         </div>
 
-                        <p>When not chasing down abstract notions in abstract places...something something</p>
+                        <p>When not chasing down abstract notions in abstract places I try to keep things a little more real. To me, this primarily entails reading books, learning new things (or rather, trying to), and doing my damndest to live the good life. If you want to learn a more about what I'm all about I've taken the liberty of cataloguing some of my favorite things. I even riff a little bit on the 'why' behind these selections.</p>
 
                         <div class="buttons">
                             <a onClick={() => this.handleButtonClick('Movies')}>Movies</a>
