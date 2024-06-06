@@ -1,5 +1,5 @@
 import Papa from 'papaparse';
-import { sortBooks } from './sortBooks'; // Adjust the path as necessary
+import { sortBooks } from './sortBooks';
 
 const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS3e4RAFBS130gqzEmRvVn0rNSFrpkGgWe4S5DRFRrbV3nd-Bm1U0Yz0ZdnEuOKHC1t-7YlVOff-13k/pub?output=csv';
 
@@ -13,13 +13,11 @@ const fetchAndParseBookList = () => {
         return response.text();
       })
       .then(csvText => {
-        console.log('CSV Text:', csvText); // Debugging: Log the raw CSV text
         Papa.parse(csvText, {
           header: true,
           complete: (results) => {
-            console.log('Parsed Results:', results); // Debugging: Log the parsed results
             const transformedData = results.data
-              .filter(book => !book["Exclude"]) // Exclude rows where the 'Exclude' column is not empty
+              .filter(book => !book["Exclude"])
               .map(book => ({
                 title: book["Title"],
                 subtitle: book["Subtitle"],
@@ -30,23 +28,18 @@ const fetchAndParseBookList = () => {
                 isbn: book["ISBN"],
                 olid: book["OLID"],
                 series: book["Series"],
-                volume: book["Volume"] ? parseInt(book["Volume"], 10) : null // Parse volume to int if present
+                volume: book["Volume"] ? parseInt(book["Volume"], 10) : null
               }));
 
-            console.log('Transformed Data:', transformedData); // Debugging: Log the transformed data
-
             const sortedData = sortBooks(transformedData);
-            console.log('Sorted Data:', sortedData); // Debugging: Log the sorted data
             resolve(sortedData);
           },
           error: (error) => {
-            console.error('Parsing Error:', error); // Debugging: Log parsing errors
             reject(error);
           }
         });
       })
       .catch(error => {
-        console.error('Fetch Error:', error); // Debugging: Log fetch errors
         reject(error);
       });
   });
