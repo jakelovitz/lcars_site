@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import fetchAndParseBookList from '../utils/useFetchAndParseBookList';
+import fetchAndParseBookList from '../utils/fetchAndParseBookList';
 import Book from './../components/Book';
+import { sortBooks } from '../utils/sortBooks'; // Adjust the path as necessary
 
 const customSelectStyles = {
   option: (provided, state) => ({
@@ -65,7 +66,7 @@ class LibraryPage extends Component {
       const subGenres = [...new Set(books.filter(book => book.genre === currentGenre.value).map(book => book['subGenre']))]
         .map(subGenre => ({ value: subGenre, label: subGenre }));
       this.setState({ subGenres });
-      console.log('subgenres', subGenres)
+      console.log('subgenres', subGenres);
     } else {
       this.setState({ subGenres: [] });
     }
@@ -95,37 +96,21 @@ class LibraryPage extends Component {
     this.setState({ currentSubGenre: selectedOption }, this.filterBooksByGenre);
   };
 
-  sortByTitle = () => {
-    const { filteredBooks } = this.state;
-    const sortedBooks = [...filteredBooks].sort((a, b) => a.title.localeCompare(b.title));
-    this.setState({ filteredBooks: sortedBooks, sortBy: 'title' });
-  };
-  
   sortByAuthor = () => {
     const { filteredBooks } = this.state;
-    const sortedBooks = [...filteredBooks].sort((a, b) => {
-      const authorA = a.sorted_authors ? a.sorted_authors.toUpperCase() : '';
-      const authorB = b.sorted_authors ? b.sorted_authors.toUpperCase() : '';
-      if (authorA !== authorB) {
-        return authorA.localeCompare(authorB);
-      }
-      
-      const seriesA = a.series ? a.series.toUpperCase() : 'ZZZZ';
-      const seriesB = b.series ? b.series.toUpperCase() : 'ZZZZ';
-      if (seriesA !== seriesB) {
-        return seriesA.localeCompare(seriesB);
-      }
-      
-      const volumeA = a.volume !== null ? a.volume : Infinity;
-      const volumeB = b.volume !== null ? b.volume : Infinity;
-
-      return volumeA - volumeB;
-    });
+    const sortedBooks = sortBooks([...filteredBooks]);
     this.setState({ filteredBooks: sortedBooks, sortBy: 'author' });
   };
 
-
-  
+  sortByTitle = () => {
+    const { filteredBooks } = this.state;
+    const sortedBooks = [...filteredBooks].sort((a, b) => {
+      const titleA = a.title ? a.title.toUpperCase() : '';
+      const titleB = b.title ? b.title.toUpperCase() : '';
+      return titleA.localeCompare(titleB);
+    });
+    this.setState({ filteredBooks: sortedBooks, sortBy: 'title' });
+  };
 
   render() {
     const { loading, error, filteredBooks, genres, subGenres, currentGenre, currentSubGenre } = this.state;
@@ -139,7 +124,7 @@ class LibraryPage extends Component {
           <div className="content">
             <h1>Library</h1>
             <blockquote>A bookshelf is as particular to its owner as are his or her clothes; a personality is stamped on a library just as a shoe is shaped by the foot.</blockquote>
-            <p class="go-right"><span class="go-space-white">— Alan Bennett</span></p>
+            <p className="go-right"><span className="go-space-white">— Alan Bennett</span></p>
             <p>As much as I love to read books, I have a rivalling fondness for both collecting and simply being around them. As such, I've derived tremendous joy in compiling the following library, so much so that I wanted to share it with anyone interested. Enjoy strolling through the titles.</p>
 
             <div className="flexbox">
@@ -152,8 +137,8 @@ class LibraryPage extends Component {
                   isClearable={true}
                   placeholder="Select a genre..."
                 />
-                </div>
-                <div className="col">
+              </div>
+              <div className="col">
                 {currentGenre && subGenres.length > 0 && (
                   <Select
                     value={currentSubGenre}
@@ -168,19 +153,19 @@ class LibraryPage extends Component {
             </div>
 
             <div className="flexbox">
-              <div className='col'>
-                <div class="buttons">
+              <div className="col">
+                <div className="buttons">
                   <a onClick={this.sortByAuthor}>Sort by Author</a>
                 </div>
               </div>
-              <div className='col'>
-                <div class="buttons">
+              <div className="col">
+                <div className="buttons">
                   <a onClick={this.sortByTitle}>Sort by Title</a>
                 </div>
               </div>
             </div>
 
-            <div class="lcars-text-bar">
+            <div className="lcars-text-bar">
               <span>Sorted by: {this.state.sortBy === 'author' ? 'Author' : 'Title'}</span>
             </div>
 
