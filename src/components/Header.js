@@ -7,9 +7,9 @@ function Header() {
         <header>
             <div className="wrap">
 
-                <div className="scroll-top">
+                {/* <div className="scroll-top">
                     <a id="scroll-top" href=""><span className="hop">screen</span>top</a>
-                </div>
+                </div> */}
 
                 <div className="left-frame-top">
                     <div className="panel-1"><a href=""></a></div>
