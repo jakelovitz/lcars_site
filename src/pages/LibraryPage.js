@@ -66,7 +66,6 @@ class LibraryPage extends Component {
       const subGenres = [...new Set(books.filter(book => book.genre === currentGenre.value).map(book => book['subGenre']))]
         .map(subGenre => ({ value: subGenre, label: subGenre }));
       this.setState({ subGenres });
-      console.log('subgenres', subGenres);
     } else {
       this.setState({ subGenres: [] });
     }
