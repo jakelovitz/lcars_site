@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import fetchAndParseBookList from '../utils/fetchAndParseBookList';
 import Book from './../components/Book';
-import { sortBooks } from '../utils/sortBooks'; // Adjust the path as necessary
+import { sortBooks } from '../utils/sortBooks';
 
 const customSelectStyles = {
   option: (provided, state) => ({
