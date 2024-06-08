@@ -9,7 +9,6 @@ describe('AboutMe Component', () => {
     });
 
     test('renders initial content correctly', () => {
-        // Check initial content before the buttons
         expect(screen.getByText('My continuing mission: to pioneer unparalleled quality in digital products; to design and develop test suites comprehensive in their scope, depth, and supporting documentation; to boldly ensure consistency and confidence like never before.')).toBeInTheDocument();
         expect(screen.getByText("I'm my mind, I'm a Code Integrity Officer, though in my near ten years of ensuring software products best meet the needs of its end users I've held such titles as Software Tester, Software (Development) Engineer in Test, and Quality Assurance Engineer.")).toBeInTheDocument();
         expect(screen.getByText('Irrespective of the name of the role, I help software teams in their pursuit of that most elusive of goals, quality, through the noble and maligned art of testing.')).toBeInTheDocument();
