@@ -11,14 +11,17 @@ describe('Book component', () => {
     genre: 'Test Genre',
     subGenre: 'Test SubGenre',
     olid: 'OL12345M',
-    volume: '1'
+    volume: '1',
   };
 
   test('renders book title with a link', () => {
     render(<Book {...defaultProps} />);
     const titleLink = screen.getByRole('link', { name: /Test Book Title/i });
     expect(titleLink).toBeInTheDocument();
-    expect(titleLink).toHaveAttribute('href', 'https://openlibrary.org/works/OL12345M');
+    expect(titleLink).toHaveAttribute(
+      'href',
+      'https://openlibrary.org/works/OL12345M'
+    );
   });
 
   test('renders subtitle when provided', () => {
@@ -51,7 +54,10 @@ describe('Book component', () => {
     render(<Book {...defaultProps} />);
     const img = screen.getByRole('img', { name: /Test Book Title cover/i });
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', 'https://covers.openlibrary.org/b/olid/OL12345M-M.jpg');
+    expect(img).toHaveAttribute(
+      'src',
+      'https://covers.openlibrary.org/b/olid/OL12345M-M.jpg'
+    );
   });
 
   test('renders author, genre, and subgenre', () => {
@@ -70,6 +76,8 @@ describe('Book component', () => {
     render(<Book {...requiredProps} />);
     expect(screen.getByText(/Test Book Title/i)).toBeInTheDocument();
     expect(screen.queryByText(/Test Subtitle/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Test Series, Volume 1/i)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Test Series, Volume 1/i)
+    ).not.toBeInTheDocument();
   });
 });

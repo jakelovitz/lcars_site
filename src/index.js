@@ -16,7 +16,7 @@ const initialState = {
 function Index() {
   const [state, setState] = React.useState(initialState); // Use React.useState
 
-  const navigateToPage = (pageIndex) => {
+  const navigateToPage = pageIndex => {
     setState({ ...state, currentPageIndex: pageIndex });
   };
 
