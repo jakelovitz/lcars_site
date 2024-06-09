@@ -1,44 +1,41 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-// import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
+import AboutMe from './pages/AboutMe';
+import TestingPage from './pages/TestingPage';
+import LibraryPage from './pages/LibraryPage';
 
-// Mock components
-const MockHeader = () => <div>Header</div>;
-const MockFooter = () => <div>Footer</div>;
-const MockCurrentPage = () => <div>Current Page</div>;
-const mockNavigateToPage = jest.fn();
+test('renders About Me page', () => {
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App>
+        <AboutMe />
+      </App>
+    </MemoryRouter>
+  );
+  expect(screen.getByText(/About Me/i)).toBeInTheDocument();
+});
 
-describe('App component', () => {
-  beforeEach(() => {
-    render(
-      <App
-        header={<MockHeader />}
-        footer={<MockFooter />}
-        currentPage={MockCurrentPage}
-        navigateToPage={mockNavigateToPage}
-      />
-    );
-  });
+test('renders Testing page', () => {
+  render(
+    <MemoryRouter initialEntries={['/testing']}>
+      <App>
+        <TestingPage />
+      </App>
+    </MemoryRouter>
+  );
+  // Use data-testid to find the unique element
+  expect(screen.getByTestId('testing-page-title')).toBeInTheDocument();
+  expect(screen.getByTestId('testing-page-content')).toBeInTheDocument();
+});
 
-  test('renders navigation buttons', () => {
-    expect(screen.getByText('About Me')).toBeInTheDocument();
-    expect(screen.getByText('Testing')).toBeInTheDocument();
-    expect(screen.getByText('Library')).toBeInTheDocument();
-  });
-
-  test('calls navigateToPage with correct argument when About Me button is clicked', () => {
-    fireEvent.click(screen.getByText('About Me'));
-    expect(mockNavigateToPage).toHaveBeenCalledWith(0);
-  });
-
-  test('calls navigateToPage with correct argument when Testing button is clicked', () => {
-    fireEvent.click(screen.getByText('Testing'));
-    expect(mockNavigateToPage).toHaveBeenCalledWith(1);
-  });
-
-  test('calls navigateToPage with correct argument when Library button is clicked', () => {
-    fireEvent.click(screen.getByText('Library'));
-    expect(mockNavigateToPage).toHaveBeenCalledWith(2);
-  });
+test('renders Library page', () => {
+  render(
+    <MemoryRouter initialEntries={['/library']}>
+      <App>
+        <LibraryPage />
+      </App>
+    </MemoryRouter>
+  );
+  expect(screen.getByText(/Library/i)).toBeInTheDocument();
 });

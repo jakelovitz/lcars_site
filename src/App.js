@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import './assets/styling.css';
 import ScrollToTopButton from './components/ScrollToTop';
+import { Link } from 'react-router-dom';
 
-function App({ header, footer, currentPage: CurrentPage, navigateToPage }) {
+function App({ children, footer }) {
   return (
     <div>
-      {header}
       <div className="wrap" id="gap">
         <div className="left-frame">
           <div>
@@ -13,15 +13,15 @@ function App({ header, footer, currentPage: CurrentPage, navigateToPage }) {
               <span className="hop"></span>
             </div>
             <div className="sidebar-buttons">
-              <a onClick={() => navigateToPage(0)} id="0">
+              <Link to="/" id="0">
                 About Me
-              </a>
-              <a onClick={() => navigateToPage(1)} id="1">
+              </Link>
+              <Link to="/testing" id="1">
                 Testing
-              </a>
-              <a onClick={() => navigateToPage(2)} id="2">
+              </Link>
+              <Link to="/library" id="2">
                 Library
-              </a>
+              </Link>
             </div>
             <div className="panel-4">
               <span className="hop"></span>
@@ -68,10 +68,8 @@ function App({ header, footer, currentPage: CurrentPage, navigateToPage }) {
             </div>
           </div>
 
-          <div>
-            <CurrentPage />
-            {footer}
-          </div>
+          <div>{children}</div>
+          {footer}
         </div>
       </div>
       <ScrollToTopButton className="scroll-to-top-button" />
