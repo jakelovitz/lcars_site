@@ -54,7 +54,7 @@ const favoriteThings = [
       },
       { text: 'Mewtwo', description: 'Over-use of my Mewtwo' },
       { text: 'Charizard', description: 'Description for Item 2' },
-      { text: 'Charizard', description: 'Description for Item 2' }
+      { text: 'Charizard', description: 'Description for Item 2' },
     ],
   },
   {
