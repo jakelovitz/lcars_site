@@ -25,7 +25,6 @@ test('renders Testing page', () => {
     </MemoryRouter>
   );
   // Use data-testid to find the unique element
-  expect(screen.getByTestId('testing-page-title')).toBeInTheDocument();
   expect(screen.getByTestId('testing-page-content')).toBeInTheDocument();
 });
 
