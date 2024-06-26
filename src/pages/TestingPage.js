@@ -8,9 +8,19 @@ function TestingPage() {
   const [result, setResult] = useState('');
 
   const handleTriangleType = () => {
+    if (sideA === '' || sideB === '' || sideC === '') {
+      alert('Please fill out all fields.');
+      return;
+    }
+
     const a = parseInt(sideA);
     const b = parseInt(sideB);
     const c = parseInt(sideC);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      setResult('Invalid: Triangle sides must be positive integers.');
+      return;
+    }
 
     // Check for invalid triangle sides
     if (a <= 0 || b <= 0 || c <= 0) {
@@ -40,7 +50,7 @@ function TestingPage() {
 
   const handleInputChange = setter => e => {
     const value = e.target.value;
-    if (/^-?\d*$/.test(value)) {
+    if (/^-?\d*$/.test(value) || value === '') {
       setter(value);
     }
   };
