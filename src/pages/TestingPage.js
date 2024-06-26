@@ -135,7 +135,8 @@ function TestingPage() {
             of the program to guide their test suite, and then once again once
             they've had a chance to play with an implemented version of the
             program, provided below by yours truly. See if you can uncover any
-            additional test cases in the act of playing around with the program.
+            additional test cases in the act of playing around with the program
+            you may not have initially considered.
           </p>
         </div>
 
