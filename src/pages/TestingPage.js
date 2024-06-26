@@ -173,7 +173,7 @@ function TestingPage() {
               />
             </label>
             <br />
-            <div class="buttons">
+            <div className="buttons">
               <a onClick={handleTriangleType}>Check Triangle Type</a>
             </div>
           </form>
