@@ -38,6 +38,13 @@ function TestingPage() {
     handleTriangleType();
   };
 
+  const handleInputChange = setter => e => {
+    const value = e.target.value;
+    if (/^-?\d*$/.test(value)) {
+      setter(value);
+    }
+  };
+
   return (
     <div>
       <div data-testid="testing-page-content">
@@ -59,7 +66,7 @@ function TestingPage() {
               </p>
               <p>
                 I really did love testing the Aperture Science Handheld Portal
-                Device with GLaDOS circa 2008-2011. Nowadays (circa 2015 -
+                Device with GlaDOS circa 2008-2011. Nowadays (circa 2015 -
                 present day), however, I've shifted to my focus from portals
                 <sup>1</sup> to protocols<sup>2</sup>, primarily within that one
                 final frontier of Software applications: the Electronic Health
@@ -111,6 +118,25 @@ function TestingPage() {
             Testing is the process of executing a program with the intent of
             finding the right information.
           </blockquote>
+          <p>
+            The authors of The Art of Software Testing begin the book with a
+            self-assessment, wherein they request the reader write a set of test
+            cases for the following program:
+          </p>
+          <b>
+            The program reads three integer values from an input dialog. The
+            three values represent the lengths of the sides of a triangle. The
+            program displays a message that states whether the triangle is
+            scalene, isosceles, or equilateral.
+          </b>
+          <p>
+            Here, I encourage the reader to try that exercise twice; once before
+            they continue any further, with only the three sentence description
+            of the program to guide their test suite, and then once again once
+            they've had a chance to play with an implemented version of the
+            program, provided below by yours truly. See if you can uncover any
+            additional test cases in the act of playing around with the program.
+          </p>
         </div>
 
         <div className="content">
@@ -119,9 +145,9 @@ function TestingPage() {
             <label>
               Side A:&nbsp;
               <input
-                type="number"
+                type="text"
                 value={sideA}
-                onChange={e => setSideA(e.target.value)}
+                onChange={handleInputChange(setSideA)}
                 required
               />
             </label>
@@ -129,9 +155,9 @@ function TestingPage() {
             <label>
               Side B:&nbsp;
               <input
-                type="number"
+                type="text"
                 value={sideB}
-                onChange={e => setSideB(e.target.value)}
+                onChange={handleInputChange(setSideB)}
                 required
               />
             </label>
@@ -139,14 +165,14 @@ function TestingPage() {
             <label>
               Side C:&nbsp;
               <input
-                type="number"
+                type="text"
                 value={sideC}
-                onChange={e => setSideC(e.target.value)}
+                onChange={handleInputChange(setSideC)}
                 required
               />
             </label>
             <br />
-            <div className="buttons">
+            <div class="buttons">
               <a onClick={handleTriangleType}>Check Triangle Type</a>
             </div>
           </form>
