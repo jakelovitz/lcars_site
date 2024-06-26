@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './../assets/styling.css';
 
 function TestingPage() {
+  const [sideA, setSideA] = useState('');
+  const [sideB, setSideB] = useState('');
+  const [sideC, setSideC] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleTriangleType = () => {
+    const a = parseInt(sideA);
+    const b = parseInt(sideB);
+    const c = parseInt(sideC);
+
+    // Check for invalid triangle sides
+    if (a <= 0 || b <= 0 || c <= 0) {
+      setResult('Invalid: Triangle sides must be positive integers.');
+      return;
+    }
+
+    // Triangle inequality theorem validation
+    if (a + b <= c || a + c <= b || b + c <= a) {
+      setResult('Invalid: The provided lengths do not form a triangle.');
+      return;
+    }
+
+    if (a === b && b === c) {
+      setResult('Equilateral');
+    } else if (a === b || b === c || a === c) {
+      setResult('Isosceles');
+    } else {
+      setResult('Scalene');
+    }
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    handleTriangleType();
+  };
+
+  const handleInputChange = setter => e => {
+    const value = e.target.value;
+    if (/^-?\d*$/.test(value)) {
+      setter(value);
+    }
+  };
+
   return (
     <div>
       <div data-testid="testing-page-content">
@@ -75,6 +118,70 @@ function TestingPage() {
             Testing is the process of executing a program with the intent of
             finding the right information.
           </blockquote>
+          <p>
+            The authors of The Art of Software Testing begin the book with a
+            self-assessment, wherein they request the reader write a set of test
+            cases for the following program:
+          </p>
+          <b>
+            The program reads three integer values from an input dialog. The
+            three values represent the lengths of the sides of a triangle. The
+            program displays a message that states whether the triangle is
+            scalene, isosceles, or equilateral.
+          </b>
+          <p>
+            Here, I encourage the reader to try that exercise twice; once before
+            they continue any further, with only the three sentence description
+            of the program to guide their test suite, and then once again once
+            they've had a chance to play with an implemented version of the
+            program, provided below by yours truly. See if you can uncover any
+            additional test cases in the act of playing around with the program
+            you may not have initially considered.
+          </p>
+        </div>
+
+        <div className="content">
+          <h2>Triangle Type Tester</h2>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Side A:&nbsp;
+              <input
+                type="text"
+                value={sideA}
+                onChange={handleInputChange(setSideA)}
+                required
+              />
+            </label>
+            <br />
+            <label>
+              Side B:&nbsp;
+              <input
+                type="text"
+                value={sideB}
+                onChange={handleInputChange(setSideB)}
+                required
+              />
+            </label>
+            <br />
+            <label>
+              Side C:&nbsp;
+              <input
+                type="text"
+                value={sideC}
+                onChange={handleInputChange(setSideC)}
+                required
+              />
+            </label>
+            <br />
+            <div class="buttons">
+              <a onClick={handleTriangleType}>Check Triangle Type</a>
+            </div>
+          </form>
+          {result && (
+            <p>
+              The triangle is: <strong>{result}</strong>
+            </p>
+          )}
         </div>
       </div>
     </div>
