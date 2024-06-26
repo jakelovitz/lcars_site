@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './../assets/styling.css';
 
 function TestingPage() {
+  const [sideA, setSideA] = useState('');
+  const [sideB, setSideB] = useState('');
+  const [sideC, setSideC] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleTriangleType = () => {
+    const a = parseInt(sideA);
+    const b = parseInt(sideB);
+    const c = parseInt(sideC);
+
+    // Check for invalid triangle sides
+    if (a <= 0 || b <= 0 || c <= 0) {
+      setResult('Invalid: Triangle sides must be positive integers.');
+      return;
+    }
+
+    // Triangle inequality theorem validation
+    if (a + b <= c || a + c <= b || b + c <= a) {
+      setResult('Invalid: The provided lengths do not form a triangle.');
+      return;
+    }
+
+    if (a === b && b === c) {
+      setResult('Equilateral');
+    } else if (a === b || b === c || a === c) {
+      setResult('Isosceles');
+    } else {
+      setResult('Scalene');
+    }
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    handleTriangleType();
+  };
+
   return (
     <div>
       <div data-testid="testing-page-content">
@@ -23,7 +59,7 @@ function TestingPage() {
               </p>
               <p>
                 I really did love testing the Aperture Science Handheld Portal
-                Device with GlaDOS circa 2008-2011. Nowadays (circa 2015 -
+                Device with GLaDOS circa 2008-2011. Nowadays (circa 2015 -
                 present day), however, I've shifted to my focus from portals
                 <sup>1</sup> to protocols<sup>2</sup>, primarily within that one
                 final frontier of Software applications: the Electronic Health
@@ -75,6 +111,50 @@ function TestingPage() {
             Testing is the process of executing a program with the intent of
             finding the right information.
           </blockquote>
+        </div>
+
+        <div className="content">
+          <h2>Triangle Type Tester</h2>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Side A:&nbsp;
+              <input
+                type="number"
+                value={sideA}
+                onChange={e => setSideA(e.target.value)}
+                required
+              />
+            </label>
+            <br />
+            <label>
+              Side B:&nbsp;
+              <input
+                type="number"
+                value={sideB}
+                onChange={e => setSideB(e.target.value)}
+                required
+              />
+            </label>
+            <br />
+            <label>
+              Side C:&nbsp;
+              <input
+                type="number"
+                value={sideC}
+                onChange={e => setSideC(e.target.value)}
+                required
+              />
+            </label>
+            <br />
+            <div className="buttons">
+              <a onClick={handleTriangleType}>Check Triangle Type</a>
+            </div>
+          </form>
+          {result && (
+            <p>
+              The triangle is: <strong>{result}</strong>
+            </p>
+          )}
         </div>
       </div>
     </div>
