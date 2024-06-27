@@ -5,7 +5,7 @@ const favoriteThings = [
     items: [
       {
         text: 'Star Wars Episode V',
-        description: `Some of my oldest memories are being in the VHS section of my local library, trying to remember which tape I wanted to grab based on it's cover image. Unfortunately for me, in this release the powers that be used Yoda's image on the tape for Episode VI, not V.`,
+        description: `Some of my oldest memories are being in the VHS section of my local library, trying to remember which tape I wanted to grab based on it's cover image. Unfortunately for me, in this release the powers that be used Yoda's image on the tape for Episode VI, not V, despite him primarily appearing in the former. Despite the frequent mix-ups of a pre-literate youth (ironically in a library), the franchise as a whole and this installment in particularly have remained very, very dear to me.`,
       },
       {
         text: 'The Big Lebowski',
@@ -18,7 +18,7 @@ const favoriteThings = [
       },
       {
         text: 'The Birdcage',
-        description: 'Nathan Lane and Robin Williams at the top of their games',
+        description: `"Oh, yes. Another jibe, another joke at my expense. Well, why not? I'm not young, I'm not new, and everyone laughs at me. I'm quite aware of how ridiculous I am. The only solution is to go to where nobody is ridiculous, and everyone is equal." — Albert Goldman`,
       },
     ],
   },
@@ -52,9 +52,10 @@ const favoriteThings = [
         text: 'Dragonite',
         description: `Sure, it looks kind of dopey, but Dragons are the best and this is the coolest one in the club. It was also the only one in the club, for awhile there, and you didn't need `,
       },
-      { text: 'Mewtwo', description: 'Over-use of my Mewtwo' },
-      { text: 'Charizard', description: 'Description for Item 2' },
-      { text: 'Charizard', description: 'Description for Item 2' },
+      { text: 'Mewtwo', description: `Over-use of my Mewtwo at the age of 7 led to a level 100 terror and I've remained fond of Mewtwo ever since` },
+      { text: 'Gengar', description: 'Description for Item 2' },
+      { text: 'Metagross', description: 'Description for Item 2' },
+      { text: 'Alakazam', description: 'Description for Item 2' },
     ],
   },
   {
