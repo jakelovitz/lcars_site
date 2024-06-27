@@ -217,10 +217,10 @@ function TestingPage() {
             important groups: the input data, which defines your scenarios; and
             the description of output, which provides criteria for evalutation.
             Additonally, it's helpful to provide your test scenario—some context
-            for other to better understand your input. Below are my test cases
+            for others to better understand your inputs. Below are my test cases
             to ensure the program handles various valid triangle configurations.
-            While three cases might seem sufficient, additional cases cover the
-            permutations of isosceles triangles.
+            While three cases initially seemed sufficient, two additional cases
+            covered the permutations of isosceles triangles.
           </p>
           <p>
             These are my test cases to check that that program can handle
