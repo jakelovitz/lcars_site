@@ -55,7 +55,7 @@ const favoriteThings = [
       { text: 'Mewtwo', description: `Over-use of my Mewtwo at the age of 7 led to a level 100 terror and I've remained fond of Mewtwo ever since` },
       { text: 'Gengar', description: 'Description for Item 2' },
       { text: 'Metagross', description: 'Description for Item 2' },
-      { text: 'Growlithe', description: 'Description for Item 2' },
+      { text: 'Alakazam', description: 'Description for Item 2' },
     ],
   },
   {
