@@ -257,10 +257,6 @@ function TestingPage() {
           <br></br>
           <p style={codeStyle}>{`{a: 4, b: 3, c: 3, expected: 'Isosceles'}`}</p>
           <br></br>
-          <p>
-            These cases ensure the program correctly identifies each type of
-            valid triangle.
-          </p>
           <h3>Invalid Inputs</h3>
           <p>
             Next, I added cases to check for invalid inputs, such as negative
@@ -308,10 +304,6 @@ function TestingPage() {
           <p style={codeStyle}>
             {`{a: 2, b: 3, c: undefined, expected: 'Invalid: The provided lengths do not form a triangle.'}`}
           </p>
-          <p>
-            These cases ensure the program handles invalid inputs gracefully and
-            correctly.
-          </p>
           <h3>Invalid Triangles</h3>
           <p>
             Finally, I tested cases where the provided inputs do not form a
@@ -343,10 +335,6 @@ function TestingPage() {
           </p>
           <p style={codeStyle}>
             {`{a: 4, b: 1, c: 2, expected: 'Invalid: The provided lengths do not form a triangle.'}`}
-          </p>
-          <p>
-            These cases ensure the program accurately identifies invalid
-            triangles.
           </p>
           <p>
             We now have 17 tests, 17 signals, that we can use to gather all the
