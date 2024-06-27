@@ -89,7 +89,7 @@ describe('TestingPage', () => {
 
       // Check for the expected result within the same container
       const resultText = new RegExp(expected, 'i');
-      const resultElement = await within(mainText.closest('div')).findByText(
+      const resultElement = await within(mainText.closest('p')).findByText(
         resultText
       );
 
