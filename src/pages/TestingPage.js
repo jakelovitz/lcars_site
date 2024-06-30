@@ -122,50 +122,70 @@ function TestingPage() {
             finding errors
           </blockquote>
           <p>
-            This concise definition, found on page 6, serves as the foundation
-            for their exploration throughout the book. In contrast, Cem Kaner,
-            James Bach, and Bret Pettichord, in "Lessons Learned in Software
-            Testing, A Context-Driven Approach," offer a slightly different
+            I appreciate the twofold nature they provide, distinguishing between
+            the act and purpose of software testing, but I am particularly
+            partial to how they capture the former: when you test, you are
+            executing a program. Their summation of purpose, however, always
+            gave me the slightest pause. True, finding errors is one of the
+            most, if not the most, important goals in software testing, but to
+            describe it as the only purpose rings false to me. In contrast, Cem
+            Kaner, James Bach, and Bret Pettichord, in "Lessons Learned in
+            Software Testing, A Context-Driven Approach," offer a more expansive
             take:
           </p>
           <blockquote>Testing is done to find the right information</blockquote>
           <p>
-            I appreciate Myers et al.'s description of the process but prefer
-            Kaner et al.'s emphasis on the purpose. Therefore, my working
-            definition of software testing is:
+            Kaner et al. offer nothing on the actual act of software testing,
+            but their framing of the purpose is inspired, if not immediately
+            self-evident. They continue to emphasize that the tester's role is
+            "the headlights of the project," and through testing, they uncover
+            basic data essential for making crucial decisions later. Christie
+            Wilson, in "Grokking Continuous Delivery," defines this data as 'the
+            information you're looking for,' which I view as nearly synonymous
+            with 'the right information.' A test that successfully helps you
+            find such information, per Wilson, is a Signal (whereas one that
+            fails to do so is Noise, but more on that later). My working
+            definition of software testing blends all of these:
           </p>
           <blockquote>
-            Testing is the process of executing a program with the intent of
-            finding the right information.
+            Testing is the process of sending signals—executing a program with
+            the intent of finding the right information.
           </blockquote>
           <p>
-            Christie Wilson expands on this concept of "the right information"
-            in her book "Grokking Continuous Delivery." She categorizes tests
-            that provide useful information as Signals and those that do not as
-            Noise. Kaner, Bach, and Pettichord emphasize the tester's role as
-            "the headlights of the project," indicating that finding the right
-            information illuminates the project's path, aiding in crucial
-            decision-making.
+            "The Art of Software Testing" begins with a self-assessment, asking
+            readers to write test cases for the following program:
           </p>
-          <p>
-            The authors of "The Art of Software Testing" begin with a
-            self-assessment, asking readers to write test cases for the
-            following program:
-          </p>
-          <b>
+          <b className="go-space-white">
             The program reads three integer values from an input dialog. The
             three values represent the lengths of the sides of a triangle. The
             program displays a message that states whether the triangle is
             scalene, isosceles, or equilateral.
           </b>
           <p>
-            Here, I encourage the reader to try that exercise twice; once before
-            they continue any further, with only the three sentence description
-            of the program to guide their test suite, and then once again once
-            they've had a chance to play with an implemented version of the
-            program, provided below by yours truly. See if you can uncover any
-            additional test cases in the act of playing around with the program
-            you may not have initially considered.
+            At its core, a test case consists of two separate yet equally
+            important groups: the input data, which defines your scenarios; and
+            the description of output, which provides criteria for evaluation.
+            Additionally, it's helpful to provide your test scenario—some
+            context for others to better understand your inputs. An abstract
+            example of a test case for the above program could look something
+            like this:
+          </p>
+          <div>
+            <b>Test Scenario Summary</b>
+          </div>
+          <p style={codeStyle}>
+            {`{a: Side A test data, b: Side B test data, c: Side C test data, expected: 'Anticipated Output'}`}
+          </p>
+          <p>
+            The program description is clear in its expectations, but its
+            conciseness could lead to assumptions regarding actual
+            implementation. The text is clear that the program will "read three
+            integer values from an input dialog," but it doesn't specify how
+            that input dialog should be set up. Is it safe to assume that the
+            user will always provide an integer to the input field? How will the
+            program respond if they don't, and how can you account for this when
+            coming up with test cases? How many signals are required to say with
+            confidence that this Triangle program is one of Quality?
           </p>
         </div>
 
@@ -211,17 +231,6 @@ function TestingPage() {
               The triangle is: <strong>{result}</strong>
             </p>
           )}
-          <h2>Testing the Triangle</h2>
-          <p>
-            At its core, a test case consists of two separate yet equally
-            important groups: the input data, which defines your scenarios; and
-            the description of output, which provides criteria for evalutation.
-            Additonally, it's helpful to provide your test scenario—some context
-            for others to better understand your inputs. Below are my test cases
-            to ensure the program handles various valid triangle configurations.
-            While three cases initially seemed sufficient, two additional cases
-            covered the permutations of isosceles triangles.
-          </p>
           <p>
             These are my test cases to check that that program can handle
             various valid configurations of a triangle. While one might have
@@ -232,8 +241,8 @@ function TestingPage() {
           <h3>Valid Triangles</h3>
           <div>
             <span>1. </span>
-            <b>Equilateral Triangle: </b>
-            <span>All sides are equal.</span>
+            <b>Equilateral Triangle </b>
+            <span>(All sides are equal)</span>
           </div>
           <p style={codeStyle}>
             {`{a: 5, b: 5, c: 5, expected: 'Equilateral'}`}
@@ -241,15 +250,15 @@ function TestingPage() {
           <br></br>
           <div>
             <span>2. </span>
-            <b>Scalene Triangle: </b>
-            <span>All sides are different.</span>
+            <b>Scalene Triangle </b>
+            <span>(All sides are different)</span>
           </div>
           <p style={codeStyle}>{`{a: 3, b: 4, c: 5, expected: 'Scalene'}`}</p>
           <br></br>
           <div>
             <span>3. </span>
-            <b>Isosceles Triangle: </b>
-            <span>Two sides are equal.</span>
+            <b>Isosceles Triangle </b>
+            <span>(Two sides are equal)</span>
           </div>
           <p style={codeStyle}>{`{a: 3, b: 3, c: 4, expected: 'Isosceles'}`}</p>
           <br></br>
@@ -264,42 +273,42 @@ function TestingPage() {
           </p>
           <div>
             <span>1. </span>
-            <b>Zero Length:</b>
+            <b>Zero Length</b>
           </div>
           <p style={codeStyle}>
             {`{a: 0, b: 4, c: 5, expected: 'Invalid: Triangle sides must be positive integers.'}`}
           </p>
           <div>
             <span>2. </span>
-            <b>Negative Length:</b>
+            <b>Negative Length</b>
           </div>
           <p style={codeStyle}>
             {`{a: -3, b: 4, c: 5, expected: 'Invalid: Triangle sides must be positive integers.'}`}
           </p>
           <div>
             <span>3. </span>
-            <b>All zeros:</b>
+            <b>All zeros</b>
           </div>
           <p style={codeStyle}>
             {`{a: 0, b: 0, c: 0, expected: 'Invalid: Triangle sides must be positive integers.'}`}
           </p>
           <div>
             <span>4. </span>
-            <b>Non-Numeric Value:</b>
+            <b>Non-Numeric Value</b>
           </div>
           <p style={codeStyle}>
             {`{a: 'a', b: 2, c: 3, expected: 'Invalid: Triangle sides must be positive integers.'}`}
           </p>
           <div>
             <span>5. </span>
-            <b>Floating Point Number:</b>
+            <b>Floating Point Number</b>
           </div>
           <p style={codeStyle}>
             {`{a: 3.5, b: 4, c: 5, expected: 'Invalid: Triangle sides must be positive integers.'}`}
           </p>
           <div>
             <span>6. </span>
-            <b>Undefined value:</b>
+            <b>Undefined value</b>
           </div>
           <p style={codeStyle}>
             {`{a: 2, b: 3, c: undefined, expected: 'Invalid: The provided lengths do not form a triangle.'}`}
@@ -312,7 +321,7 @@ function TestingPage() {
           </p>
           <div>
             <span>1. </span>
-            <b>Sum of Two Sides Equals the Third:</b>
+            <b>Sum of Two Sides Equals the Third</b>
           </div>
           <p style={codeStyle}>
             {`{a: 1, b: 2, c: 3, expected: 'Invalid: The provided lengths do not form a triangle.'}`}
@@ -325,7 +334,7 @@ function TestingPage() {
           </p>
           <div>
             <span>2. </span>
-            <b>Sum of Two Sides Less than the Third:</b>
+            <b>Sum of Two Sides Less than the Third</b>
           </div>
           <p style={codeStyle}>
             {`{a: 1, b: 2, c: 4, expected: 'Invalid: The provided lengths do not form a triangle.'}`}
