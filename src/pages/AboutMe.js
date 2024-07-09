@@ -27,17 +27,38 @@ class AboutMe extends React.Component {
     );
     if (!thingData) return null;
 
+    const leftColumnItems = [];
+    const rightColumnItems = [];
+    thingData.items.forEach((item, index) => {
+      const columnItem = (
+        <div key={index} className="item" style={{ marginBottom: '20px' }}>
+          <h3>{item.text}</h3>
+          <img
+            src={item.image}
+            alt={item.text}
+            style={{
+              width: '500px',
+              height: '500px',
+              objectFit: 'contain',
+            }}
+          />
+          <p>{item.description}</p>
+        </div>
+      );
+      if (index % 2 === 0) {
+        leftColumnItems.push(columnItem);
+      } else {
+        rightColumnItems.push(columnItem);
+      }
+    });
+
     return (
       <div>
         <p>{thingData.blurb}</p>
-        <ul className="lcars-list">
-          {thingData.items.map((item, index) => (
-            <React.Fragment key={index}>
-              <li>{item.text}</li>
-              <p>{item.description}</p>
-            </React.Fragment>
-          ))}
-        </ul>
+        <div className="flexbox">
+          <div className="col">{leftColumnItems}</div>
+          <div className="col">{rightColumnItems}</div>
+        </div>
       </div>
     );
   };
@@ -100,9 +121,11 @@ class AboutMe extends React.Component {
               <a onClick={() => this.handleButtonClick('Albums')}>Albums</a>
               <a onClick={() => this.handleButtonClick('Pokémon')}>Pokémon</a>
               <a onClick={() => this.handleButtonClick('Spaceships')}>
-                Spaceships
+                Spacecraft
               </a>
-              <a onClick={() => this.handleButtonClick('Books')}>Books</a>
+              <a onClick={() => this.handleButtonClick('Books')}>
+                Speculative Fiction
+              </a>
             </div>
             {this.generateList()}
           </div>
