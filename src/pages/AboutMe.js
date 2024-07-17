@@ -37,8 +37,6 @@ class AboutMe extends React.Component {
             src={item.image}
             alt={item.text}
             style={{
-              width: '500px',
-              height: '500px',
               objectFit: 'contain',
             }}
           />
@@ -112,19 +110,21 @@ class AboutMe extends React.Component {
               reading books, learning new things (or rather, trying to), and
               doing my damndest to live the good life. If you want to learn a
               more about what I'm all about I've taken the liberty of
-              cataloguing some of my favorite things. I even riff a little bit
-              on the 'why' behind these selections.
+              cataloguing some of things I've spent an above-average amount of
+              time reflecting on.
             </p>
 
             <div className="buttons">
-              <a onClick={() => this.handleButtonClick('Movies')}>Movies</a>
-              <a onClick={() => this.handleButtonClick('Albums')}>Albums</a>
+              <a onClick={() => this.handleButtonClick('Cookies')}>Cookies</a>
+              <a onClick={() => this.handleButtonClick('Albums')}>
+                Alt Rock Albums
+              </a>
               <a onClick={() => this.handleButtonClick('Pokémon')}>Pokémon</a>
               <a onClick={() => this.handleButtonClick('Spaceships')}>
-                Spacecraft
+                Spaceships
               </a>
-              <a onClick={() => this.handleButtonClick('Books')}>
-                Speculative Fiction
+              <a onClick={() => this.handleButtonClick('Episodes')}>
+                Star Trek Episodes
               </a>
             </div>
             {this.generateList()}
