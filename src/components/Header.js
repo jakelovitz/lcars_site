@@ -1,6 +1,6 @@
 import React from 'react';
 import './../assets/styling.css';
-import Pdf from './../assets/Lovitz-Resume.pdf';
+import Pdf from './../assets/Lovitz_Resume.pdf';
 
 function Header() {
   return (
