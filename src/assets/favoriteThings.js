@@ -3,7 +3,7 @@ import images from '../utils/importImages';
 const favoriteThings = [
   {
     name: 'Cookies',
-    blurb: `Nothing quite like a good cookie`,
+    blurb: `Nothing quite like a good cookie, right?`,
     items: [
       {
         text: `Pumpkin with Cream Cheese Frosting`,
@@ -34,7 +34,7 @@ const favoriteThings = [
   },
   {
     name: `Albums`,
-    blurb: `eyo albums`,
+    blurb: `I've always loved the genre, and in recent years have also developed a deep fondness for reading about Rock history and Rock music in general.`,
     items: [
       {
         text: `Typhoon - White Lighter`,
