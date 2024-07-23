@@ -1,3 +1,4 @@
+// jest.setup.js
 globalThis.require = {
     context: jest.fn(() => {
       const keys = () => ['test-image-1.png', 'test-image-2.png'];
@@ -6,3 +7,4 @@ globalThis.require = {
       return context;
     }),
   };
+  
