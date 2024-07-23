@@ -52,6 +52,7 @@ describe('AboutMe Component', () => {
       thing.items.forEach(item => {
         expect(listContainer).toHaveTextContent(item.text);
         expect(listContainer).toHaveTextContent(item.description);
+        expect(listContainer).toContainHTML(`<img src="${item.image}" alt="${item.text}"/>`);
       });
     });
   });
