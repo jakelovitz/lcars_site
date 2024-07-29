@@ -3,6 +3,17 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import AboutMe from './AboutMe';
 import favoriteThings from '../assets/favoriteThings';
 
+// Mock importImages.js
+jest.mock('../utils/importImages', () => {
+  return {
+    __esModule: true,
+    default: {
+      'test-image-1.png': 'test-file-stub',
+      'test-image-2.png': 'test-file-stub'
+    }
+  };
+});
+
 describe('AboutMe Component', () => {
   beforeEach(() => {
     render(<AboutMe />);
@@ -52,6 +63,7 @@ describe('AboutMe Component', () => {
       thing.items.forEach(item => {
         expect(listContainer).toHaveTextContent(item.text);
         expect(listContainer).toHaveTextContent(item.description);
+        expect(listContainer).toContainHTML(`<img src="${item.image}" alt="${item.text}"/>`);
       });
     });
   });
