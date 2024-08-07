@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Header from './Header';
-import Pdf from './../assets/Lovitz-Resume.pdf';
+import Pdf from './../assets/Lovitz_Resume.pdf';
 
 describe('Header Component', () => {
   beforeEach(() => {
