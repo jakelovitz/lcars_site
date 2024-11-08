@@ -1,7 +1,6 @@
 module.exports = {
-    eslint: {
-      enable: true,
-      mode: 'file',
-    },
-  };
-  
+  eslint: {
+    enable: true,
+    mode: 'file',
+  },
+};
