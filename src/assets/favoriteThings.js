@@ -3,7 +3,7 @@ import images from '../utils/importImages';
 const favoriteThings = [
   {
     name: 'Cookies',
-    blurb: `Nothing quite like a good cookie, right?`,
+    blurb: `Nothing quite like a good cookie, right? Small little bundles of joy, when made right. Which mine occassionally are.`,
     items: [
       {
         text: `Pumpkin with Cream Cheese Frosting`,
@@ -34,7 +34,7 @@ const favoriteThings = [
   },
   {
     name: `Albums`,
-    blurb: `I've always loved the genre, and in recent years have also developed a deep fondness for reading about Rock history and Rock music in general.`,
+    blurb: `In recent years I've developed a deep fondness for reading about Rock history and Rock music in general, which has deepened my appreciation for the genre. These are some oft-played records from this Disciple of the Electric Church.`,
     items: [
       {
         text: `Typhoon - White Lighter`,
@@ -135,7 +135,7 @@ const favoriteThings = [
         image: images[`lower_decks_three.png`],
       },
       {
-        text: `The Offspring // TNG`,
+        text: `The Offspring // TNG, s3e16`,
         description: `The Enterprise is searching for new life and finds it here. One of the all time great episodes for Picard and Data.`,
         image: images[`offspring.png`],
       },
@@ -145,22 +145,22 @@ const favoriteThings = [
         image: images[`prophet_motive_two.png`],
       },
       {
-        text: `Nemesis // VOY`,
+        text: `Nemesis // VOY, s4e4`,
         description: `The plot is largely forgettable, but the aliens of the week speak in such an engaging manner it remains one of Voyager's standouts`,
         image: images[`nemesis_two.jpg`],
       },
       {
-        text: `Thirty Days // VOY`,
+        text: `Thirty Days // VOY, s5e9`,
         description: `Tom Paris expresses a never before love of the sea as motivation for saving an (admittedly cool) ocean world, and we finally meet the Delancy sisters.`,
         image: images[`thirty_days_three.jpg`],
       },
       {
-        text: `Balance of Terror // TOS`,
+        text: `Balance of Terror // TOS, s1e15`,
         description: `Star Trek as a Submarine movie. The vibes of this episode are behind compare, leading to it being reimagined to great effect 50+ years after its air date.`,
         image: images[`balance_of_terror.png`],
       },
       {
-        text: 'In a Mirror, Darkly // ENT',
+        text: 'In a Mirror, Darkly // ENT, s4e18/19',
         description: `We dispatch with all the plot dressing around crossing over to the Mirror Universe and instead just spend a couple of episodes spending some time there`,
         image: images[`mirror.png`],
       },
